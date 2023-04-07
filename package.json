@@ -1,0 +1,20 @@
+{
+  "name": "software-sherpa",
+  "version": "1.0.0",
+  "description": "Music Label App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjustSahen/Software-Sherpas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imjustSahen/Software-Sherpas/issues"
+  },
+  "homepage": "https://github.com/imjustSahen/Software-Sherpas#readme"
+}
