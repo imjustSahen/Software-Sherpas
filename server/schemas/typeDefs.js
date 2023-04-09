@@ -7,9 +7,9 @@ const typeDefs = gql`
     }
 
     type Artist {
-        _id: ID 
-        name: String,
-        email: String
+        _id: ID!
+        name: String!
+        email: String!
     }
 
     type Mutation {
