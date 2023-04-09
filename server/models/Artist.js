@@ -37,6 +37,7 @@ artistSchema.methods.isCorrectPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 
+
 const Artist = model('Artist', artistSchema)
 
 module.exports = Artist;
