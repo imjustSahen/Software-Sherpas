@@ -14,7 +14,7 @@ const resolvers = {
         const artist = await Artist.create(args);
         // const token = signToken(user);
       
-        return { token, artist };
+        return { artist };
         },
     }
 }

@@ -13,7 +13,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addArtist(name: String!, email: String!): Artist
+        addArtist(name: String!, email: String!, password: String!): Artist
     }
 
 `;
