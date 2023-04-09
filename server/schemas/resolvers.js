@@ -12,7 +12,7 @@ const resolvers = {
         const artist = await Artist.create(args);
         // const token = signToken(user);
       
-        return { artist };
+        return { artist }; //will need to add token back to return
         },
     }
 }
