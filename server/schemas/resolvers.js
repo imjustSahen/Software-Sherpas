@@ -2,10 +2,8 @@ const { Artist } = require('../models');
 
 const resolvers = {
     Query: {
-        allArtist: async (parent, args) => {
-            const artistData = await Artist.find({});
-
-            return artistData;
+        artists: async (parent, args) => {
+            return await Artist.find({});
         }
     },
 

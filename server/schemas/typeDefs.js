@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
 
     type Query {
-        allArtist: Artist
+        artists: [Artist]
     }
 
     type Artist {
