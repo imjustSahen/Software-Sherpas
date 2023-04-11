@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const eventSchema = new Schema({
     name: {
@@ -18,7 +19,7 @@ const eventSchema = new Schema({
         required: true,
     },
     artists: { 
-        type: Array,
+        type: String,
     },
     poster: {
         // will holf binary data from a jpeg file
