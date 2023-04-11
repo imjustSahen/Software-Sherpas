@@ -6,10 +6,10 @@ const eventSchema = new Schema({
         type: String,
         required: true,
     },
-    // date: {
-    //     type: Date,
-    //     required: true,
-    // },
+    date: {
+        type: Date,
+        required: true,
+    },
     location: {
         type: String,
         required: true,
@@ -19,7 +19,7 @@ const eventSchema = new Schema({
         required: true,
     },
     artists: { 
-        type: String,
+        type: Array,
     },
     // poster: {
     //     // will holf binary data from a jpeg file

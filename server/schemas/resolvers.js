@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Event } = require('../models');
 
 const resolvers = {
     Query: {
@@ -14,6 +14,12 @@ const resolvers = {
       
         return userdata ;
         },
+
+        addEvent: async (parent, args) => {
+            const eventdata = await Event.create(args);
+
+            return eventdata ;
+        }
     }
 }
 
