@@ -8,8 +8,27 @@ const typeDefs = gql`
 
     type User {
         _id: ID!
-        name: String!
+        firstName: String!
+        lastName: String!
         email: String!
+        artist: Boolean
+        artistName: String
+        spotifyId: Schema.Types.ObjectId
+    }
+
+    type Event {
+        _id: ID!
+        name: String!
+        date: DateTime!
+        location: String!
+        venue: String!
+        artists: Array
+        poster: EventPoster
+    }
+
+    type EventPoster {
+        data: String!
+        contentType: String!
     }
 
     type Auth {

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const eventSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
     date: {
         type: Date,
         required: true,

@@ -9,10 +9,10 @@ const resolvers = {
 
     Mutation: {
         addUser: async (parent, args) => {
-        const artistdata = await User.create(args);
+        const userdata = await User.create(args);
         // const token = signToken(user);
       
-        return artistdata ;
+        return userdata ;
         },
     }
 }
