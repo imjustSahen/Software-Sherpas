@@ -1,14 +1,17 @@
 const mongoose = require('mongoose');
-
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Order = require('./Order');
+// const Events = require('./Events');
 
 const userSchema = new Schema({
   firstName: {
     type: String,
     required: true,
     trim: true
+  },
+  artist: {
+    type: Boolean,
+    required: true,
   },
   lastName: {
     type: String,
@@ -25,7 +28,8 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  orders: [Order.schema]
+  events:  [{type: Schema.Types.ObjectId, ref: 'Event'}],
+  // orders: [Order.schema]
 });
 
 // set up pre-save middleware to create password
