@@ -1,15 +1,15 @@
-const { Artist } = require('../models');
+const { User } = require('../models');
 
 const resolvers = {
     Query: {
-        artists: async (parent, args) => {
-            return await Artist.find({});
+        users: async (parent, args) => {
+            return await User.find({});
         }
     },
 
     Mutation: {
-        addArtist: async (parent, args) => {
-        const artistdata = await Artist.create(args);
+        addUser: async (parent, args) => {
+        const artistdata = await User.create(args);
         // const token = signToken(user);
       
         return artistdata ;

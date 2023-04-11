@@ -9,10 +9,6 @@ const userSchema = new Schema({
     required: true,
     trim: true
   },
-  artist: {
-    type: Boolean,
-    required: true,
-  },
   lastName: {
     type: String,
     required: true,
@@ -28,8 +24,22 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+  artist: {
+    type: Boolean,
+    required: true,
+  },
+  artistName: {
+    type: String,
+    unique: true
+  },
+  spotifyId: {
+    type: Schema.Types.ObjectId
+  },
+  // instagram: {
+
+  // },
+  //other socials
   events:  [{type: Schema.Types.ObjectId, ref: 'Event'}],
-  // orders: [Order.schema]
 });
 
 // set up pre-save middleware to create password
