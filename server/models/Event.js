@@ -6,10 +6,10 @@ const eventSchema = new Schema({
         type: String,
         required: true,
     },
-    date: {
-        type: Date,
-        required: true,
-    },
+    // date: {
+    //     type: Date,
+    //     required: true,
+    // },
     location: {
         type: String,
         required: true,
@@ -21,12 +21,12 @@ const eventSchema = new Schema({
     artists: { 
         type: String,
     },
-    poster: {
-        // will holf binary data from a jpeg file
-        data: Buffer,
-        //used to store the MIME type of the image
-        contentType: String
-    }
+    // poster: {
+    //     // will holf binary data from a jpeg file
+    //     data: Buffer,
+    //     //used to store the MIME type of the image
+    //     contentType: String
+    // }
 });
 
 const Event = mongoose.model('Event', eventSchema);
