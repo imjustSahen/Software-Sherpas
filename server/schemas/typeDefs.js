@@ -13,7 +13,7 @@ const typeDefs = gql`
         email: String!
         artist: Boolean
         artistName: String
-        spotifyId: Schema.Types.ObjectId
+        spotifyId: String
     }
 
     type Event {

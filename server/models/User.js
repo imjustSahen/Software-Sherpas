@@ -33,7 +33,7 @@ const userSchema = new Schema({
     unique: true
   },
   spotifyId: {
-    type: Schema.Types.ObjectId
+    type: String
   },
   // instagram: {
 
