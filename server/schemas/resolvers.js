@@ -16,10 +16,13 @@ const resolvers = {
             return await User.find({});
         },
         userbyid: async (parent, { id }) => {
-            return await User.findById(id);
+            return await User.findById( id );
         },
         events: async (parent, args) => {
             return await Event.find({});
+        },
+        eventbyid: async (parent, { id }) => {
+            return await Event.findById( id );
         }
     },
 
