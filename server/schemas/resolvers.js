@@ -6,6 +6,9 @@ const resolvers = {
         users: async (parent, args) => {
             return await User.find({});
         },
+        events: async (parent, args) => {
+            return await Event.find({});
+        }
     },
 
     Mutation: {
