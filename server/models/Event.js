@@ -19,16 +19,16 @@ const eventSchema = new Schema({
         required: true,
     },
     artists: { 
-        type: String,
+        type: Array,
     },
-    poster: {
-        // will holf binary data from a jpeg file
-        data: Buffer,
-        //used to store the MIME type of the image
-        contentType: String
-    }
+    // poster: {
+    //     // will holf binary data from a jpeg file
+    //     data: Buffer,
+    //     //used to store the MIME type of the image
+    //     contentType: String
+    // }
 });
 
 const Event = mongoose.model('Event', eventSchema);
 
-module.exports = Event;
+module.exports =  Event;

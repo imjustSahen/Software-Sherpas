@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema, model} = mongoose;
 const bcrypt = require('bcrypt');
-// const Events = require('./Events');
 
 const userSchema = new Schema({
   firstName: {
@@ -17,7 +16,8 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    match: [/.+@.+\..+/, 'Must match an email address!'],
   },
   password: {
     type: String,
@@ -34,11 +34,10 @@ const userSchema = new Schema({
   spotifyId: {
     type: String
   },
-  // instagram: {
-
-  // },
-  //other socials
-  events:  [{type: Schema.Types.ObjectId, ref: 'Event'}],
+  socialMedia: {
+    type: Array
+  },
+  events: [{type: Schema.Types.ObjectId, ref: 'Event'}],
 });
 
 // set up pre-save middleware to create password
