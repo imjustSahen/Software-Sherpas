@@ -28,10 +28,10 @@ const typeDefs = gql`
 
     type Event {
         _id: ID!
-        name: String
-        date: DateTime
-        location: String
-        venue: String
+        name: String!
+        date: DateTime!
+        location: String!
+        venue: String!
         artists: Array
         # poster: EventPoster
     }
@@ -51,10 +51,10 @@ const typeDefs = gql`
     #     contentType: String!
     # }
 
-    # type Auth {
-    #     token: ID!
-    #     user: User
-    # }
+    type Auth {
+        token: ID!
+        user: User
+    }
 
     type Query {
         me: User
