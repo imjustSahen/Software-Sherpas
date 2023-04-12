@@ -1,4 +1,5 @@
 const { User, Event } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
 
 // Will need to add context to resolvers after contructing
 const resolvers = {
@@ -8,31 +9,51 @@ const resolvers = {
                  const userData = await User
                 .findOne({_id: context.user._id })
                 .select('-__v -password');
+
                 return userData;
             }
             throw new AuthenticationError('You must be logged in!');
         },
         users: async (parent, args) => {
-            return await User.find({});
+            try {
+               return await User.find({}); 
+            } catch {
+                throw new Error('Could not find Users');
+            };
         },
         userbyid: async (parent, { id }) => {
-            return await User.findById( id );
+            try {
+                return await User.findById( id );
+            } catch {
+                throw new Error('Could not find User matching given id')
+            };
         },
         events: async (parent, args) => {
-            return await Event.find({});
+            try {
+              return await Event.find({});  
+            } catch {
+                throw new Error('Could not find events');
+            };
         },
         eventbyid: async (parent, { id }) => {
-            return await Event.findById( id );
+            try {
+                return await Event.findById( id );  
+            } catch {
+                throw new Error('Could not find Event matching given id');
+            };
         }
     },
 
     Mutation: {
         // User Mutations
         addUser: async (parent, args) => {
-            const userdata = await User.create(args);
-            // const token = signToken(user);
-        
-            return userdata ;
+            try {
+               const userdata = await User.create(args); 
+               // const token = signToken(user);
+               return userdata;
+            } catch {
+                throw new Error('Could not create user');
+            };
         },
         updateUser: async (parent, {id, UserInput}) => {
             try {
@@ -49,6 +70,7 @@ const resolvers = {
             } catch {
                 throw new Error('Could not remove user')
             };
+            // -----------------------------> remove user w/ context example
             // if (context.user) {
             //     const user = await User.findOneAndUpdate(
             //         { _id: context.user._id },
@@ -60,13 +82,18 @@ const resolvers = {
             // }
 
             // throw new AuthenticationError('You need to be logged in to delete a book!')
+            // ------------------------------>
         },
 
         // Event Mutations
         addEvent: async (parent, args) => {
-            const eventdata = await Event.create(args);
-
-            return eventdata ;
+            try {
+                const eventdata = await Event.create(args);
+                return eventdata ; 
+            } catch {
+                throw new Error('Could not create event');
+            }
+       
         },
         updateEvent: async (parent, {id, EventInput}) => {
             try {
