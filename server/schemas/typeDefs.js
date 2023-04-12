@@ -27,7 +27,7 @@ const typeDefs = gql`
         artistName: String
         spotifyId: String
         socialMedia: Array
-        events: [Event]
+        events: Array
     }
 
     type Event {
@@ -72,7 +72,7 @@ const typeDefs = gql`
         # both add user and add event using the input type do not work but the update mutations do
         login(email: String!, password: String!): Auth
         logout: Boolean
-        addUser(firstName: String!, lastName: String!, email: String!, password: String!, artist: Boolean!, artistName: String, spotifyId: String, socialMedia: Array, events: [Event]): Auth
+        addUser(firstName: String!, lastName: String!, email: String!, password: String!, artist: Boolean!, artistName: String, spotifyId: String, socialMedia: Array, events: Array): User
         # addUser(userInput: UserInput!): User
         updateUser(id: ID!, userInput: UserInput!): User
         removeUser(id: ID!): User
