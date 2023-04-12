@@ -64,6 +64,14 @@ const resolvers = {
             const eventdata = await Event.create(args);
 
             return eventdata ;
+        },
+        updateEvent: async (parent, {id, EventInput}) => {
+            try {
+                const eventdata = await Event.findByIdAndUpdate(id, EventInput, {new: true});
+                return eventdata;
+            } catch {
+                throw new Error('Could not update event');
+            }
         }
     }
 }

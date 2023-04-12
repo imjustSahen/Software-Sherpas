@@ -36,6 +36,16 @@ const typeDefs = gql`
         # poster: EventPoster
     }
 
+    input EventInput {
+        _id: ID
+        name: String
+        date: DateTime
+        location: String
+        venue: String
+        artists: Array
+        # poster: EventPoster
+    }
+
     # type EventPoster {
     #     data: String!
     #     contentType: String!
@@ -59,7 +69,7 @@ const typeDefs = gql`
         updateUser(id: ID!, UserInput: UserInput!): User
         removeUser(id: ID!): User
         addEvent(name: String!, date: DateTime!, location: String!, venue: String!): Event
-        # updateEvent()
+        updateEvent(id: ID!, EventInput: EventInput!): Event
         # removeEvent()
     }
 `;
