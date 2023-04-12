@@ -70,7 +70,7 @@ const typeDefs = gql`
         removeUser(id: ID!): User
         addEvent(name: String!, date: DateTime!, location: String!, venue: String!): Event
         updateEvent(id: ID!, EventInput: EventInput!): Event
-        # removeEvent()
+        removeEvent(id: ID!): Event
     }
 `;
 

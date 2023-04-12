@@ -72,6 +72,14 @@ const resolvers = {
             } catch {
                 throw new Error('Could not update event');
             }
+        },
+        removeEvent: async (parent, { id }) => {
+            try {
+                const event = await Event.findByIdAndDelete( id );
+                return event;
+            } catch {
+                throw new Error('Could not delete event');
+            }
         }
     }
 }
