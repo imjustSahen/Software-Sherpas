@@ -37,7 +37,7 @@ const userSchema = new Schema({
   socialMedia: {
     type: Array
   },
-  events: {type: Schema.Types.ObjectId, ref: 'Event'},
+  events: [{type: Schema.Types.ObjectId, ref: 'Event'}],
 });
 
 // set up pre-save middleware to create password
