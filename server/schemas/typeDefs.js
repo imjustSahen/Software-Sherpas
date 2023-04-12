@@ -14,6 +14,8 @@ const typeDefs = gql`
         artist: Boolean!
         artistName: String
         spotifyId: String
+        socialMedia: Array
+        events: [Event]
     }
 
     input UserInput {
@@ -24,6 +26,8 @@ const typeDefs = gql`
         artist: Boolean
         artistName: String
         spotifyId: String
+        socialMedia: Array
+        events: [Event]
     }
 
     type Event {
@@ -65,12 +69,16 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        login(email: String!, password: String!): User
-        addUser(firstName: String!, lastName: String!, email: String!, password: String!, artist: Boolean!): User
-        updateUser(id: ID!, UserInput: UserInput!): User
+        # both add user and add event using the input type do not work but the update mutations do
+        login(email: String!, password: String!): Auth
+        logout: Boolean
+        addUser(firstName: String!, lastName: String!, email: String!, password: String!, artist: Boolean!, artistName: String, spotifyId: String, socialMedia: Array, events: [Event]): Auth
+        # addUser(userInput: UserInput!): User
+        updateUser(id: ID!, userInput: UserInput!): User
         removeUser(id: ID!): User
-        addEvent(name: String!, date: DateTime!, location: String!, venue: String!): Event
-        updateEvent(id: ID!, EventInput: EventInput!): Event
+        addEvent(name: String!, date: DateTime!, location: String!, venue: String!, artists: Array): Event
+        # addEvent(eventInput: EventInput!): User
+        updateEvent(id: ID!, eventInput: EventInput!): Event
         removeEvent(id: ID!): Event
     }
 `;
