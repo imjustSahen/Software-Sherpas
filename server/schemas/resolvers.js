@@ -1,10 +1,22 @@
 const { User, Event } = require('../models');
 
-// Will need to add context
+// Will need to add context to resolvers after contructing
 const resolvers = {
     Query: {
+        me: async (parent, args, context) => {
+            if (context.user) {
+                 const userData = await User
+                .findOne({_id: context.user._id })
+                .select('-__v -password');
+                return userData;
+            }
+            throw new AuthenticationError('You must be logged in!');
+        },
         users: async (parent, args) => {
             return await User.find({});
+        },
+        userbyid: async (parent, { id }) => {
+            return await User.findById(id);
         },
         events: async (parent, args) => {
             return await Event.find({});
