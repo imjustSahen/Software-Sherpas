@@ -1,7 +1,8 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-
+# Scalars are the basic data types used in a GraphQL API. 
+# Allow developers to define the structure of data in their GraphQL schema and specify how data is accepted as input and returned as output.
     scalar DateTime
     scalar Array
 
@@ -15,12 +16,22 @@ const typeDefs = gql`
         spotifyId: String
     }
 
+    input UserInput {
+        _id: ID
+        firstName: String
+        lastName: String
+        email: String
+        artist: Boolean
+        artistName: String
+        spotifyId: String
+    }
+
     type Event {
         _id: ID!
-        name: String!
-        date: DateTime!
-        location: String!
-        venue: String!
+        name: String
+        date: DateTime
+        location: String
+        venue: String
         artists: Array
         # poster: EventPoster
     }
@@ -35,11 +46,6 @@ const typeDefs = gql`
     #     user: User
     # }
 
-    # type UpdateResponse {
-    #     success: Boolean!
-    #     user: User
-    # }
-
     type Query {
         users: [User]
     }
@@ -47,7 +53,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): User
         addUser(firstName: String!, lastName: String!, email: String!, password: String!, artist: Boolean!): User
-        # updateUser(id: ID!): User
+        updateUser(id: ID!, UserInput: UserInput!): User
         # removeUser(): 
         addEvent(name: String!, date: DateTime!, location: String!, venue: String!): Event
         # updateEvent()

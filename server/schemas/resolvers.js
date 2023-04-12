@@ -9,10 +9,18 @@ const resolvers = {
 
     Mutation: {
         addUser: async (parent, args) => {
-        const userdata = await User.create(args);
-        // const token = signToken(user);
-      
-        return userdata ;
+            const userdata = await User.create(args);
+            // const token = signToken(user);
+        
+            return userdata ;
+        },
+        updateUser: async (parent, {id, UserInput}) => {
+            try {
+                const updateduser = await User.findByIdAndUpdate(id, UserInput, {new: true});
+                return updateduser;
+            } catch {
+                throw new Error('Could not update User.')
+            }
         },
 
         addEvent: async (parent, args) => {
