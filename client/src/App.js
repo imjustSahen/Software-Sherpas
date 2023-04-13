@@ -50,7 +50,7 @@ function App() {
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="*" element={<NoMatch />} />
+            <Route path="*" element={<NoMatch/>} />
           </Routes>
         </div>
       </Router>
