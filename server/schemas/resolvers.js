@@ -9,7 +9,7 @@ const resolvers = {
             if (context.user) {
                 try {
                     const userData = await User
-                        .findOne({ _id: context.user._id });
+                        .findOne({ _id: context.user._id }).populate('events');
                     return userData;
                 } catch {
                 throw new AuthenticationError('You must be logged in!');
@@ -117,17 +117,15 @@ const resolvers = {
                     console.log('hit');
                     console.log(eventInput);
 
-                    const event = await Event.create({ eventInput });
-                    console.log('hit2')
+                    const event = await Event.create(eventInput);
+                    console.log(event);
 
                     const updateduser = await User.findOneAndUpdate(
-                        { _id: context.user._id },
-                        { $push: { events: eventInput } },
-                        { new: true }
+                        { artistName: eventInput.artistName },
+                        { $push: { events: event } },
                     );
-                    console.log('hit2')
-                    console.log(updateduser);
-                    return event;
+                    console.log('hit2');
+                    return updateduser ;
                 } catch (e) {
                     console.log(e);
                     throw new Error('Could not create event');

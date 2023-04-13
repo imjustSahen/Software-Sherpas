@@ -79,7 +79,6 @@ const typeDefs = gql`
         updateUser(id: ID!, userInput: UserInput!): User
         removeUser(id: ID!): User
 
-        # addEvent(hostArtist: Array, name: String!, date: DateTime!, location: String!, venue: String!, artists: Array): Event
         addEvent(eventInput: EventInput!): User
         updateEvent(id: ID!, eventInput: EventInput!): Event
         removeEvent(id: ID!): Event
