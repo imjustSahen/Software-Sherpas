@@ -68,15 +68,6 @@ const resolvers = {
                 throw new AuthenticationError('failed to authenticate user');
             };
         },
-        // addUser: async (parent, args) => {
-        //     try {
-        //         const user = await User.create(args);
-        //         const token = signToken(user);
-        //         return { token, user };
-        //     } catch {
-        //         throw new Error('Could not create user');
-        //     };
-        // },
         addUser: async (parent, {input}) => {
             try {
                 console.log('hit');
@@ -117,31 +108,36 @@ const resolvers = {
             };
         },
 
-        // Event Mutations
         addEvent: async (parent, { eventInput }, context) => {
-
             // const eventdata = await Event.create(args);
             // return eventdata ; 
-            if (context.user) {
+
+            // if (context.user) {
                 try {
+                    console.log('hit');
                     console.log(eventInput);
+
                     const event = await Event.create({ eventInput });
+                    console.log('hit2')
 
                     const updateduser = await User.findOneAndUpdate(
                         { _id: context.user._id },
                         { $push: { events: eventInput } },
                         { new: true }
                     );
-
+                    console.log('hit2')
                     console.log(updateduser);
                     return event;
-                } catch {
+                } catch (e) {
+                    console.log(e);
                     throw new Error('Could not create event');
                 }
-            } else {
-                throw new AuthenticationError('You need to be logged in!');
-            };
+            // } else {
+            //     throw new AuthenticationError('You need to be logged in!');
+            // };
         },
+
+
         // updateEvent: async (parent, { id, eventInput }) => {
         //     try {
         //         const eventdata = await Event.findByIdAndUpdate(id, eventInput, { new: true });
