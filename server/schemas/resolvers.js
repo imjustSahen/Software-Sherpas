@@ -68,14 +68,26 @@ const resolvers = {
                 throw new AuthenticationError('failed to authenticate user');
             };
         },
-        addUser: async (parent, args) => {
+        // addUser: async (parent, args) => {
+        //     try {
+        //         const user = await User.create(args);
+        //         const token = signToken(user);
+        //         return { token, user };
+        //     } catch {
+        //         throw new Error('Could not create user');
+        //     };
+        // },
+        addUser: async (parent, {input}) => {
             try {
-                const user = await User.create(args);
-                const token = signToken(user);
-                return { token, user };
-            } catch {
-                throw new Error('Could not create user');
-            };
+                console.log('hit');
+                console.log(input);
+                const user = await User.create(input);
+                console.log('hit2');
+                return user ;
+            } catch (e) {
+                console.log(e);
+                throw new Error('Could not create user with input type');
+            }
         },
         updateUser: async (parent, { id, userInput }) => {
             try {
@@ -195,7 +207,7 @@ const resolvers = {
                     await User.findOneAndUpdate(
                         { _id: context.user._id },
                         { $pull: { events: { id } } }
-                    )
+                    );
 
                     return event;
                 } catch {
