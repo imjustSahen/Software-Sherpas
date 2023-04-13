@@ -103,7 +103,8 @@ const resolvers = {
             try {
                 const user = await User.findOneAndDelete(id);
                 return user;
-            } catch {
+            } catch (e) {
+                console.log(e);
                 throw new Error('Could not remove user')
             };
         },
@@ -121,8 +122,8 @@ const resolvers = {
                     console.log(event);
 
                     const updateduser = await User.findOneAndUpdate(
-                        { artistName: eventInput.artistName },
-                        { $push: { events: event } },
+                        { _id: context.user._id },
+                        { $push: { events: event }},
                     );
                     console.log('hit2');
                     return updateduser ;
@@ -204,7 +205,8 @@ const resolvers = {
                     );
 
                     return event;
-                } catch {
+                } catch (e) {
+                    console.log(e);
                     throw new Error('Could not delete event');
                 };
             } else {
