@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const eventSchema = new Schema({
+    hostArtist: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true,
@@ -24,7 +28,7 @@ const eventSchema = new Schema({
     // poster: {
     //     // will holf binary data from a jpeg file
     //     data: Buffer,
-    //     //used to store the MIME type of the image
+    //     // used to store the MIME type of the image
     //     contentType: String
     // }
 });
