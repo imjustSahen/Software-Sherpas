@@ -68,9 +68,9 @@ const resolvers = {
             }
    
         },
-        addUser: async (parent, { userInput }) => {
+        addUser: async (parent, args ) => {
             try {
-               const userdata = await User.create({ userInput }); 
+               const userdata = await User.create( args ); 
                // const token = signToken(user);
                return userdata;
             } catch (err) {
