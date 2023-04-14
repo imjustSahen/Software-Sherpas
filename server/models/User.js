@@ -31,11 +31,29 @@ const userSchema = new Schema({
   artistName: {
     type: String,
   },
+  //-----------------> to coincide with loader npm package file url OR file path
+  heroImage: {
+    type: String
+  },
+  secondaryImage: {
+    type: String
+  },
+  //------------------> 
+  artistDescription: {
+    type: String,
+    trim: true
+  },
   spotifyId: {
     type: String
   },
-  socialMedia: {
-    type: Array
+  instagramUrl: {
+   type: String
+  },
+  spotifyUrl: {
+    type: String
+  },
+  soundcloudUrl: {
+    type: String
   },
   events: [{type: Schema.Types.ObjectId, ref: 'Event'}],
 });
