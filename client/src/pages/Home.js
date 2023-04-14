@@ -27,9 +27,19 @@ function HomePage() {
         </div>
         <div className="description-container">
           <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            euismod velit nec purus faucibus bibendum. Aliquam erat volutpat.
-            Nulla vitae ipsum tincidunt, ultrices lorem vel, aliquet lacus.
+            Welcome to The Sherpa Studios, a music label dedicated to supporting
+            local artists based out of the Pacific Northwest. Our goal is to
+            provide a platform for talented musicians to showcase their work,
+            connect with new fans, and grow their careers. At The Sherpa
+            Studios, we believe in the power of music to bring people together
+            and inspire positive change. We are committed to fostering a vibrant
+            and inclusive music community that celebrates diversity and
+            creativity. Whether you're a singer-songwriter, a rapper, or a
+            producer, we invite you to join our community and share your unique
+            sound with the world. With a team of experienced professionals and a
+            passion for great music, we're here to help you succeed. Thank you
+            for visiting The Sherpa Studios. We can't wait to hear what you
+            create.
           </p>
         </div>
         <div className="featured-artist-container">
