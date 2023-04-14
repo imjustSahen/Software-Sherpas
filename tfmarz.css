@@ -20,7 +20,7 @@ header {
 
 .artist-name {
     font-size: 100px;
-    color: #be1d08;
+    color: pink;
     padding: 2px;
     border-bottom: solid;
     text-shadow: 2px 3px 2px rgb(120, 119, 119);
@@ -32,7 +32,7 @@ header {
     display: flex;
     flex-flow: row;
     margin: 50px;
-    box-shadow: 0 0 15px #479da9;
+    box-shadow: 0 0 15px pink ;
 }
 
 /* .artist-hero-2 {
@@ -65,7 +65,7 @@ img {
 
 .artist-booking {
     /* color: #479da9; */
-    color: goldenrod;
+    color: goldenrod!;
     display: flex;
     justify-content: space-evenly;
 }
