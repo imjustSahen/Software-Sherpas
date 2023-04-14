@@ -47,18 +47,20 @@ body {
   margin: 0 auto;
 }
 
-.featured artist-container {
+.featured-artist-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
+
 .featured-artist {
   text-align: center;
   margin-top: 50px;
   color: #af4635;
 }
+
 .images-container {
   display: flex;
   flex-wrap: wrap;
@@ -68,14 +70,15 @@ body {
 }
 
 .sherpa-image-container {
+  position: relative; /* Add position relative */
   width: 40%;
   margin: 0 10px;
   border-radius: 5px;
 }
 
-.sherpa-image-container:hover {
-  box-shadow: 0px 5px 5px #af4635;
-  animation: forwards 0.5s ease-in-out;
+.sherpa-image-container:hover .overlay {
+  /* Show overlay only when container is hovered */
+  opacity: 1;
 }
 
 .sherpa-image {
@@ -83,7 +86,15 @@ body {
   border-radius: 5px;
 }
 
-.footer {
-  text-align: center;
-  margin-top: 50px;
+.overlay {
+  position: absolute; /* Position absolute */
+  bottom: 0; /* Align at bottom */
+  left: 0; /* Align at left */
+  right: 0; /* Align at right */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Add transition effect */
 }

@@ -3,7 +3,19 @@ import Artist1 from "../assets/images/TFMarz-2.jpg";
 import Artist2 from "../assets/images/keramel-2.JPEG";
 import CrowdImage from "../assets/BGimages/crowdpic.png";
 import "./home.css";
+
 function HomePage() {
+  const artistList = [
+    {
+      name: "TFMarz",
+      imgSrc: Artist1,
+    },
+    {
+      name: "Keramel",
+      imgSrc: Artist2,
+    },
+  ];
+
   return (
     <div>
       <div className="header-image-container">
@@ -20,16 +32,22 @@ function HomePage() {
             Nulla vitae ipsum tincidunt, ultrices lorem vel, aliquet lacus.
           </p>
         </div>
-        <div classname="featured artist-container">
+        <div className="featured-artist-container">
           <h1 className="featured-artist">Featured Artists</h1>
         </div>
         <div className="images-container">
-          <div className="sherpa-image-container">
-            <img src={Artist1} alt="Sherpa 1" className="sherpa-image" />
-          </div>
-          <div className="sherpa-image-container">
-            <img src={Artist2} alt="Sherpa 2" className="sherpa-image" />
-          </div>
+          {artistList.map((artist, index) => (
+            <div className="sherpa-image-container" key={index}>
+              <img
+                src={artist.imgSrc}
+                alt={artist.name}
+                className="sherpa-image"
+              />
+              <div className="overlay">
+                <div className="overlay-text">{artist.name}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
