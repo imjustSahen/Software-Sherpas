@@ -33,7 +33,6 @@ const typeDefs = gql`
 
     type Event {
         _id: ID!
-        hostArtist: Array
         name: String!
         date: DateTime!
         location: String!
@@ -44,7 +43,6 @@ const typeDefs = gql`
 
     input EventInput {
         _id: ID
-        hostArtist: Array
         name: String
         date: DateTime
         location: String

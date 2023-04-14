@@ -12,20 +12,22 @@ const resolvers = {
                         .findOne({ _id: context.user._id }).populate('events');
                     return userData;
                 } catch {
-                throw new AuthenticationError('You must be logged in!');
+                    throw new Error('Could not find user');
                 };
-            };
+            } else {
+            throw new AuthenticationError('You must be logged in!');
+            }
         },
         users: async (parent, args) => {
             try {
-                return await User.find({});
+                return await User.find({}).populate('events');
             } catch {
                 throw new Error('Could not find Users');
             };
         },
         userbyid: async (parent, { id }) => {
             try {
-                return await User.findById(id);
+                return await User.findById(id).populate('events');
             } catch {
                 throw new Error('Could not find User matching given id')
             };
@@ -51,20 +53,17 @@ const resolvers = {
         login: async (parent, { email, password }) => {
             try {
                 const user = await User.findOne({ email });
-
-                if (!user) {
-                    throw new AuthenticationError('No user found with this email address');
-                };
-
+                    if (!user) {
+                        throw new AuthenticationError('No user found with this email address');
+                    };
                 const correctPW = await user.isCorrectPassword(password);
-
-                if (!correctPW) {
-                    throw new AuthenticationError('Incorrect credentials');
-                };
-
+                    if (!correctPW) {
+                        throw new AuthenticationError('Incorrect credentials');
+                    };
                 const token = signToken(user);
                 return { token, user };
-            } catch {
+            } catch (e) {
+                console.log(e);
                 throw new AuthenticationError('failed to authenticate user');
             };
         },
@@ -73,12 +72,13 @@ const resolvers = {
                 console.log('hit');
                 console.log(input);
                 const user = await User.create(input);
+                const token = signToken(user);
                 console.log('hit2');
-                return user ;
+                return { token, user };
             } catch (e) {
                 console.log(e);
                 throw new Error('Could not create user with input type');
-            }
+            };
         },
         updateUser: async (parent, { id, userInput }) => {
             try {
@@ -113,7 +113,7 @@ const resolvers = {
             // const eventdata = await Event.create(args);
             // return eventdata ; 
 
-            // if (context.user) {
+            if (context.user) {
                 try {
                     console.log('hit');
                     console.log(eventInput);
@@ -130,10 +130,10 @@ const resolvers = {
                 } catch (e) {
                     console.log(e);
                     throw new Error('Could not create event');
-                }
-            // } else {
-            //     throw new AuthenticationError('You need to be logged in!');
-            // };
+                };
+            } else {
+                throw new AuthenticationError('You need to be logged in!');
+            };
         },
 
 
