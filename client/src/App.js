@@ -10,12 +10,12 @@ import { setContext } from "@apollo/client/link/context";
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Artist from "./pages/Artist";
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
+// import ContactUs from "./pages/ContactUs";
+// import Login from "./pages/Login";
+// import Signup from "./pages/Signup";
+// import Artist from "./pages/Artist";
+import Nav from './components/Nav/Nav';
+// import Hero from "./components/Hero";
 
 const httpLink = createHttpLink({
  uri: "/graphql",
@@ -42,15 +42,15 @@ function App() {
       <Router>
         <div>
           <Nav />
-          <Hero />
+          {/* <Hero /> */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/artist/:name" element={<Artist />} />
+            {/* <Route path="/artist/:name" element={<Artist />} /> */}
             <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/contactus" element={<ContactUs />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="*" element={<NoMatch/>} />
+            {/* <Route path="/contactus" element={<ContactUs />} /> */}
+            {/* <Route path="/login" element={<Login />} /> */}
+            {/* <Route path="/signup" element={<Signup />} /> */}
+            {/* <Route path="*" element={<NoMatch/>} /> */}
           </Routes>
         </div>
       </Router>
