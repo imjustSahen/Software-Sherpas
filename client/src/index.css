@@ -42,6 +42,9 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
+  color: #1b1b1b;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
@@ -201,6 +204,29 @@ input:focus {
 
 .error-text {
   color: var(--error);
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 70%;
+  margin: 0px auto;
+  margin-bottom: 20px;  
+}
+
+.logoPic {
+  height: 200px;
+  width: fit-content;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+}
+
+#about-text {
+  margin-top: 2rem;
 }
 
 @media screen and (max-width: 768px) {

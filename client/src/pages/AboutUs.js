@@ -2,10 +2,10 @@ import React from "react";
 
 function AboutUs() {
   return (
-    <div className="about">
+    <div className="about-section">
       <h1>About Us</h1>
       <img
-        src={'client/src/assets/logos/sherpa-cassette.png'}
+        src={'./assets/logos/sherpa-cassette.png'}
         alt="logo pic"
         className="logoPic"
       />
@@ -22,37 +22,6 @@ function AboutUs() {
         a home for your music, or a fan searching for the next big thing, Sherpa
         Records is here to guide you on your journey.
       </div>
-      <style>{`
-        .about {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            width: 70%;
-            margin: 0px auto;
-            margin-bottom: 20px;  
-        }
-
-        h1 {
-          color: #1b1b1b;
-          font-size: 3rem;
-          margin-top: 2rem;
-          margin-bottom: 2rem;
-        }
-
-        .logoPic {
-            height: 200px;
-            width: fit-content;
-            border-radius: 50%;
-            border-style: solid;
-            border-color: black;
-        }
-
-        #about-text {
-            margin-top: 2rem;
-        }
-      `}</style>
     </div>
   );
 }
