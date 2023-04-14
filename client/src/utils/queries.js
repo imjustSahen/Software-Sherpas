@@ -3,41 +3,63 @@ import { gql } from '@apollo/client';
 export const GET_ME = gql`
 query getMe {
   me {
-    _id
+    id
+    firstName
+    lastName
+    email
+    artistName
+    artist
+    spotifyId
+    socialMedia
+    events {
+      name
+      date
+      location
+      venue
+      artists
+    }
+  }
+};
+`;
+
+export const GET_USERS = gql`
+  query getUsers {
+    id
     firstName
     lastName
     email
     artist
     artistName
     spotifyId
-  }
-}
-`;
-
-export const GET_USERS = gql`
-  query getUsers {
-      users {
-      _id
-      firstName
-      lastName
-      email
-      artist
-      artistName
-      spotifyId
+    socialMedia
+    events {
+      name
+      date
+      location
+      venue
+      artists
     }
-  }
+  };
 `;
 
 export const GET_USER_BY_ID = gql`
 query userById($userbyidId: ID!) {
   userbyid(id: $userbyidId) {
-    _id
+    id
     firstName
     lastName
     email
     artist
     artistName
     spotifyId
+    socialMedia
+    events {
+      name
+      date
+      location
+      venue
+      artists
+    }
   }
 }
 `;
@@ -45,7 +67,7 @@ query userById($userbyidId: ID!) {
 export const GET_EVENTS = gql`
 query getEvents {
   events {
-    _id
+    id
     name
     date
     location
@@ -58,7 +80,7 @@ query getEvents {
 export const GET_EVENT_BY_ID = gql`
 query eventById($eventbyidId: ID!) {
   eventbyid(id: $eventbyidId) {
-    _id
+    id
     name
     date
     location
