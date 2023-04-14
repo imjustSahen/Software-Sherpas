@@ -4,6 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     color: white;
+    font-family: "Copperplate", "Papyrus", "fantasy"
 }
 
 header {
@@ -17,13 +18,9 @@ header {
     justify-content: center;
 }
 
-div {
-    border: solid
-}
-
 .artist-name {
     font-size: 100px;
-    color: #BE5408;
+    color: #be1d08;
     padding: 2px;
     border-bottom: solid;
     text-shadow: 2px 3px 2px rgb(120, 119, 119);
@@ -35,6 +32,7 @@ div {
     display: flex;
     flex-flow: row;
     margin: 50px;
+    box-shadow: 0 0 15px #479da9;
 }
 
 /* .artist-hero-2 {
@@ -47,19 +45,34 @@ div {
 img {
     width: 50%;
     max-width: 100%;
-    height:50%;
+    /* height: 100%; */
     object-fit: cover;
-    border: solid 1px white;
-    box-shadow: 0 0 15px #58a1aa;
-    margin: 10px
+    /* border: solid 1px white; */
 }
 
 .artist-description {
-    margin: 10px;
     padding: 25px;
     width: 50%;
     max-width: 100%;
-    border-radius: 10%;
+    border: 0px;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 150%;
+}
+
+.artist-booking {
+    /* color: #479da9; */
+    color: goldenrod!;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.artist-socials {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .spotify-contact-box {
