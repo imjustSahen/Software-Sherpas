@@ -1,0 +1,89 @@
+body {
+  background-color: #dbdbdb;
+  margin: auto;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.header-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+.header-image {
+  width: 100%;
+  height: auto;
+}
+.title-container {
+  text-align: center;
+  margin-top: 50px;
+  color: #af4635;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.description-container {
+  display: flex;
+  flex: 1;
+  margin-top: 110px;
+  margin-left: 110px;
+  margin-right: 110px;
+  text-align: center;
+  color: aliceblue;
+  background-color: #1e1e1e;
+  border-radius: 5px;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin: 0 auto;
+}
+
+.featured artist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.featured-artist {
+  text-align: center;
+  margin-top: 50px;
+  color: #af4635;
+}
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.sherpa-image-container {
+  width: 40%;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+.sherpa-image-container:hover {
+  box-shadow: 0px 5px 5px #af4635;
+  animation: forwards 0.5s ease-in-out;
+}
+
+.sherpa-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+}

@@ -17,9 +17,9 @@ import Artist from "./pages/Artist";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 
-const httpLink = createHttpLink({
-  uri: "/graphql",
-});
+// const httpLink = createHttpLink({
+//   uri: "/api",
+// });
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
@@ -31,10 +31,10 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
+// const client = new ApolloClient({
+//   link: authLink.concat(httpLink),
+//   cache: new InMemoryCache(),
+// });
 
 function App() {
   return (
