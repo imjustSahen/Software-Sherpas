@@ -22,6 +22,27 @@
   width: 150px;
   height: 150px;
   z-index: 1;
+  cursor: pointer;
+}
+
+/* Define the keyframe animation for the logo */
+@keyframes logo-click-animation {
+  5% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add the animation to the logo */
+.logo1.clicked {
+  animation-name: logo-click-animation;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
 
 .login-signup-button {
@@ -37,6 +58,30 @@
 .login-signup-button:hover {
   background-color: #fff;
   color: #000;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.743);
+  z-index: 2;
+}
+
+.modal-form {
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* CSS for screens smaller than 768px */
