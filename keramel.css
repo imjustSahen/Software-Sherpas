@@ -1,0 +1,95 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+header {
+    background-color: black;
+}
+.vid-hero video {
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div {
+    border: solid
+}
+
+.artist-name {
+    font-size: 100px;
+    color: #BE5408;
+    padding: 2px;
+    border-bottom: solid;
+    text-shadow: 2px 3px 2px rgb(120, 119, 119);
+    /* color: #70cdda */
+}
+
+.artist-about-box {
+    /* border: solid; */
+    display: flex;
+    flex-flow: row;
+    margin: 50px;
+}
+
+/* .artist-hero-2 {
+    /* width: screen;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+
+img {
+    width: 50%;
+    max-width: 100%;
+    height:50%;
+    object-fit: cover;
+    border: solid 1px white;
+    box-shadow: 0 0 15px #58a1aa;
+    margin: 10px
+}
+
+.artist-description {
+    margin: 10px;
+    padding: 25px;
+    width: 50%;
+    max-width: 100%;
+    border-radius: 10%;
+}
+
+.spotify-contact-box {
+    display: flex;
+    margin: 50px;
+}
+
+@media screen and (min-width:1020px) {
+    .vidHero h1 {
+        font-size: 5rem;
+    }
+    .vidHero h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .vidHero h1 {
+        font-size: 4rem;
+    }
+    .vidHero h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .vidHero h1 {
+        font-size: 3rem;
+    }
+    .vidHero h2 {
+        font-size: 1rem;
+    }
+}
