@@ -154,43 +154,7 @@ const resolvers = {
         //     }
 
         // throw new AuthenticationError('You need to be logged in to save a book!')
-        //----------->
-        // try {
-        //     // Check if user is authenticated
-        //     if (!user) {
-        //       throw new AuthenticationError('You must be logged in to update an event');
-        //     }
 
-        //     // Find the event to update
-        //     const event = await Event.findById(id);
-
-        //     // Check if event exists
-        //     if (!event) {
-        //       throw new UserInputError('Event not found');
-        //     }
-
-        //     // Check if user is the owner of the event
-        //     if (event.user.toString() !== user.id) {
-        //       throw new ForbiddenError('You are not authorized to update this event');
-        //     }
-
-        //     // Update the event with the new input
-        //     event.name = input.name || event.name;
-        //     event.date = input.date || event.date;
-        //     event.location = input.location || event.location;
-        //     event.venue = input.venue || event.venue
-        //     event.artists = input.artists || event.artists
-        //     event.poster = input.poster || event.poster
-
-        //     // Save the updated event to the database
-        //     const updatedEvent = await event.save();
-
-        //     // Return the updated event
-        //     return updatedEvent;
-        //   } catch (err) {
-        //     throw new ApolloError('Failed to update event', err);
-        //   }
-        // },
         removeEvent: async (parent, { id }, context) => {
             if (context.user) {
                 try {
