@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+
+
 const APIController = (function () {
   const clientId = "4f6b8c1863344e38a17d088b273aedb4";
   const clientSecret = "ef3d9ced71c54eb6990718abb6d06d01";
@@ -87,3 +89,5 @@ const APIController = (function () {
     },
   };
 })();
+
+export { APIController };
