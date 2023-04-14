@@ -7,10 +7,15 @@ query getMe {
     firstName
     lastName
     email
-    artistName
     artist
+    artistName
+    heroImage
+    secondaryImage
+    artistDescription
     spotifyId
-    socialMedia
+    instagramUrl
+    spotifyUrl
+    soundcloudUrl
     events {
       name
       date
@@ -30,8 +35,13 @@ export const GET_USERS = gql`
     email
     artist
     artistName
+    heroImage
+    secondaryImage
+    artistDescription
     spotifyId
-    socialMedia
+    instagramUrl
+    spotifyUrl
+    soundcloudUrl
     events {
       name
       date
@@ -51,8 +61,13 @@ query userById($userbyidId: ID!) {
     email
     artist
     artistName
+    heroImage
+    secondaryImage
+    artistDescription
     spotifyId
-    socialMedia
+    instagramUrl
+    spotifyUrl
+    soundcloudUrl
     events {
       name
       date
