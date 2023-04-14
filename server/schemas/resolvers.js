@@ -9,7 +9,7 @@ const resolvers = {
             if (context.user) {
                 try {
                     const userData = await User
-                        .findOne({ _id: context.user._id });
+                        .findOne({ _id: context.user._id }).populate('events');
                     return userData;
                 } catch {
                 throw new AuthenticationError('You must be logged in!');
@@ -68,14 +68,17 @@ const resolvers = {
                 throw new AuthenticationError('failed to authenticate user');
             };
         },
-        addUser: async (parent, args) => {
+        addUser: async (parent, {input}) => {
             try {
-                const user = await User.create(args);
-                const token = signToken(user);
-                return { token, user };
-            } catch {
-                throw new Error('Could not create user');
-            };
+                console.log('hit');
+                console.log(input);
+                const user = await User.create(input);
+                console.log('hit2');
+                return user ;
+            } catch (e) {
+                console.log(e);
+                throw new Error('Could not create user with input type');
+            }
         },
         updateUser: async (parent, { id, userInput }) => {
             try {
@@ -100,36 +103,40 @@ const resolvers = {
             try {
                 const user = await User.findOneAndDelete(id);
                 return user;
-            } catch {
+            } catch (e) {
+                console.log(e);
                 throw new Error('Could not remove user')
             };
         },
 
-        // Event Mutations
         addEvent: async (parent, { eventInput }, context) => {
-
             // const eventdata = await Event.create(args);
             // return eventdata ; 
-            if (context.user) {
+
+            // if (context.user) {
                 try {
+                    console.log('hit');
                     console.log(eventInput);
-                    const event = await Event.create({ eventInput });
+
+                    const event = await Event.create(eventInput);
+                    console.log(event);
 
                     const updateduser = await User.findOneAndUpdate(
                         { _id: context.user._id },
-                        { $push: { events: eventInput } },
-                        { new: true }
+                        { $push: { events: event }},
                     );
-
-                    console.log(updateduser);
-                    return event;
-                } catch {
+                    console.log('hit2');
+                    return updateduser ;
+                } catch (e) {
+                    console.log(e);
                     throw new Error('Could not create event');
                 }
-            } else {
-                throw new AuthenticationError('You need to be logged in!');
-            };
+            // } else {
+            //     throw new AuthenticationError('You need to be logged in!');
+            // };
         },
+
+
         // updateEvent: async (parent, { id, eventInput }) => {
         //     try {
         //         const eventdata = await Event.findByIdAndUpdate(id, eventInput, { new: true });
@@ -195,10 +202,11 @@ const resolvers = {
                     await User.findOneAndUpdate(
                         { _id: context.user._id },
                         { $pull: { events: { id } } }
-                    )
+                    );
 
                     return event;
-                } catch {
+                } catch (e) {
+                    console.log(e);
                     throw new Error('Could not delete event');
                 };
             } else {
