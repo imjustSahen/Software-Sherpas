@@ -25,10 +25,12 @@ function Hero({ handlePageChange }) {
 
   const handleLoginClick = () => {
     setShowLoginModal(true);
+    setShowSignupModal(false);
   };
 
   const handleSignupClick = () => {
     setShowSignupModal(true);
+    setShowLoginModal(false);
   };
 
   const handleModalClose = () => {
@@ -45,7 +47,7 @@ function Hero({ handlePageChange }) {
 
   return (
     <div
-      className="Hero"
+      className="hero"
       style={{ backgroundImage: `url(${currentBackground})` }}
     >
       <a href="#" onClick={handleLogoClick}>
@@ -59,9 +61,9 @@ function Hero({ handlePageChange }) {
         <button className="login-signup-button" onClick={handleLoginClick}>
           Log In
         </button>
-        <button className="login-signup-button" onClick={handleSignupClick}>
+        {/* <button className="login-signup-button" onClick={handleSignupClick}>
           Sign Up
-        </button>
+        </button> */}
       </div>
       {showLoginModal && (
         <div className="modal">
@@ -73,6 +75,7 @@ function Hero({ handlePageChange }) {
             <input type="password" id="password" name="password" required />
             <button type="submit">Log In</button>
           </form>
+          <button onClick={handleSignupClick}>Sign Up</button>
           <button onClick={handleModalClose}>Close</button>
         </div>
       )}
@@ -93,6 +96,7 @@ function Hero({ handlePageChange }) {
             />
             <button type="submit">Sign Up</button>
           </form>
+          <button onClick={handleLoginClick}>Log In</button>
           <button onClick={handleModalClose}>Close</button>
         </div>
       )}
