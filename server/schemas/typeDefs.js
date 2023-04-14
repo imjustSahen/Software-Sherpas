@@ -6,6 +6,7 @@ const typeDefs = gql`
     scalar DateTime
     scalar Array
 
+    # Using type User for query specifically, password not included
     type User {
         _id: ID!
         firstName: String!
@@ -13,11 +14,17 @@ const typeDefs = gql`
         email: String!
         artist: Boolean!
         artistName: String
+        heroImage: String
+        secondaryImage: String
+        artistDescription: String
         spotifyId: String
-        socialMedia: Array
+        instagramUrl: String
+        spotifyUrl: String
+        soundcloudUrl: String
         events: [Event]
     }
 
+    # Using input UserInput for artist creation and update, password included
     input UserInput {
         _id: ID
         firstName: String
@@ -26,9 +33,13 @@ const typeDefs = gql`
         password: String
         artist: Boolean
         artistName: String
+        heroImage: String
+        secondaryImage: String
+        artistDescription: String
         spotifyId: String
-        socialMedia: Array
-        events: Array
+        instagramUrl: String
+        spotifyUrl: String
+        soundcloudUrl: String
     }
 
     type Event {
@@ -70,7 +81,6 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        # both add user and add event using the input type do not work but the update mutations do
         login(email: String!, password: String!): Auth
         # logout: Boolean
         addUser(input: UserInput): Auth

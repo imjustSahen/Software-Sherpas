@@ -5,14 +5,19 @@ export const LOGIN_USER = gql`
         login(email: $email, password: $password) {
             token
             user {
-                _id
-                firstName
-                lastName
-                email
-                artistName
-                artist
-                spotifyId
-                socialMedia
+              id
+              firstName
+              lastName
+              email
+              artist
+              artistName
+              heroImage
+              secondaryImage
+              artistDescription
+              spotifyId
+              instagramUrl
+              spotifyUrl
+              soundcloudUrl
             }
         }
     };
@@ -29,8 +34,13 @@ export const ADD_USER = gql`
         email
         artist
         artistName
+        heroImage
+        secondaryImage
+        artistDescription
         spotifyId
-        socialMedia
+        instagramUrl
+        spotifyUrl
+        soundcloudUrl
       }
     }
   };
