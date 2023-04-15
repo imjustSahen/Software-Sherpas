@@ -74,19 +74,29 @@
   background-color: rgba(0, 0, 0, 0.743);
   z-index: 2;
 }
-
 .modal-form {
   width: 80%;
   max-width: 600px;
-  background-color: #fff;
+  background-color: #ffffff00;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.modal-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.modal-form .button-group button {
+  width: 48%;
+}
+
 /* CSS for screens smaller than 768px */
 @media (max-width: 768px) {
-  .landing {
+  .hero {
     height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
