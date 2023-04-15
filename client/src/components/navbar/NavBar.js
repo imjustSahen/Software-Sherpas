@@ -1,40 +1,43 @@
-import React from "react";
-import "./navbar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-const Navbar = ({ handlePageChange }) => {
+const Navbar = () => {
   return (
-    <div className="navbar">
-      <h1>Sherpa Records</h1>
-      <nav>
-        <ul className="header__nav-list">
-          <li className="header__nav-item">
-            <button className="header__nav-button" onClick={() => handlePageChange("aboutUs")}>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          Sherpa Records
+        </Link>
+        <ul className="navbar-menu">
+          <li className="navbar-item">
+            <Link to="/shop" className="navbar-links">
               Shop
-            </button>
+            </Link>
           </li>
-          <li className="header__nav-item">
-            <button className="header__nav-button" onClick={() => handlePageChange("contactUs")}>
+          <li className="navbar-item">
+            <Link to="/artists" className="navbar-links">
               Artists
-            </button>
+            </Link>
           </li>
-          <li className="header__nav-item">
-            <button className="header__nav-button" onClick={() => handlePageChange("contactUs")}>
+          <li className="navbar-item">
+            <Link to="/aboutus" className="navbar-links">
               About Us
-            </button>
-            <li className="header__nav-item">
-            <button className="header__nav-button" onClick={() => handlePageChange("contactUs")}>
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/contactus" className="navbar-links">
               Contact Us
-            </button>
+            </Link>
           </li>
-          <li className="header__nav-item">
-            <button className="header__nav-button" onClick={() => handlePageChange("contactUs")}>
+          <li className="navbar-item">
+            <Link to="/login" className="navbar-links">
               Login/Sign Up
-            </button>
-          </li>
+            </Link>
           </li>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 
