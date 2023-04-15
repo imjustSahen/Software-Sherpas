@@ -14,11 +14,11 @@ import AboutUs from "./pages/AboutUs";
 // import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
 // import Artist from "./pages/Artist";
-import Nav from './components/Nav/Nav';
-// import Hero from "./components/Hero";
+import Nav from "./components/Nav/Nav";
+import Hero from "./components/hero/Hero";
 
 const httpLink = createHttpLink({
- uri: "/graphql",
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -32,9 +32,9 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-link: authLink.concat(httpLink),
-cache: new InMemoryCache(),
- });
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
       <Router>
         <div>
           <Nav />
-          {/* <Hero /> */}
+          <Hero />
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/artist/:name" element={<Artist />} /> */}
