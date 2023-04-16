@@ -1,9 +1,10 @@
 import React from "react";
 // import Artist1 from "../assets/images/TFMarz-2.jpg";
 // import Artist2 from "../assets/images/keramel-2.JPEG";
-import CrowdImage from "../assets/logos/CrowdLogo.png";
+// import CrowdImage from "../assets/logos/CrowdLogo.png";
 import "./home.css";
 import ArtistList from "../components/artistList/artistList";
+import Hero from "../components/Hero/Hero";
 import { useQuery } from "@apollo/client";
 import { GET_ARTISTS } from "../utils/queries";
 
@@ -17,9 +18,10 @@ const HomePage = () =>  {
 
   return (
     <div>
-      <div className="header-image-container">
+      <Hero />
+      {/* <div className="header-image-container">
         <img src={CrowdImage} alt="Crowd" className="header-image" />
-      </div>
+      </div> */}
       <div className="container">
         <div className="title-container">
           <h1 className="title">WE ARE THE SHERPAS</h1>

@@ -14,7 +14,7 @@ import Artist from "./pages/Artist";
 // import ContactUs from "./pages/ContactUs";
 
 import Nav from "./components/Nav/Nav";
-import Hero from "./components/Hero/Hero";
+// import Hero from "./components/Hero/Hero";
 // import Footer from "./components/footer/Footer";
 import Login from "./components/loginModal/Login";
 import Signup from "./components/signupModal/Signup";
@@ -44,7 +44,7 @@ function App() {
       <Router>
         <div>
           <Nav Signup={Signup} Login={Login} />
-          <Hero />
+          {/* <Hero /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/artist/:userId" element={<Artist />} />
@@ -54,6 +54,7 @@ function App() {
             {/* <Route path="/signup" element={<Signup />} /> */}
             {/* <Route path="*" element={<NoMatch/>} /> */}
           </Routes>
+          </div>
       </Router>
     </ApolloProvider>
   );
