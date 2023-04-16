@@ -31,14 +31,15 @@ const userSchema = new Schema({
   artistName: {
     type: String,
   },
-  //-----------------> to coincide with loader npm package file url OR file path
   heroImage: {
     type: String
   },
   secondaryImage: {
     type: String
   },
-  //------------------> 
+  thumbnailImg: {
+    type: String
+  },
   artistDescription: {
     type: String,
     trim: true
