@@ -1,27 +1,27 @@
 import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-    mutation login($email: String!, $password: String!) {
-        login(email: $email, password: $password) {
-            token
-            user {
-              id
-              firstName
-              lastName
-              email
-              artist
-              artistName
-              heroImage
-              secondaryImage
-              thumbnailImg
-              artistDescription
-              spotifyId
-              instagramUrl
-              spotifyUrl
-              soundcloudUrl
-            }
-        }
-    };
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        id
+        firstName
+        lastName
+        email
+        artist
+        artistName
+        heroImage
+        secondaryImage
+        thumbnailImg
+        artistDescription
+        spotifyId
+        instagramUrl
+        spotifyUrl
+        soundcloudUrl
+      }
+    }
+  }
 `;
 
 export const ADD_USER = gql`
@@ -45,7 +45,7 @@ export const ADD_USER = gql`
         soundcloudUrl
       }
     }
-  };
+  }
 `;
 
 export const ADD_EVENT = gql`
