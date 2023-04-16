@@ -3,30 +3,30 @@ import "./Nav.css";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav({ Signup, Login }) {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-            <ul className="header__nav-list">
-              <li className="header__nav-item">
-                <Link to="/orderHistory">Order History</Link>
-              </li>
-              <li className="header__nav-item">
-                {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-                <a href="/" onClick={() => Auth.logout()}>
-                  Logout
-                </a>
-              </li>
-            </ul>
+        <ul className="header__nav-list">
+          <li className="header__nav-item">
+            <Link to="/orderHistory">Order History</Link>
+          </li>
+          <li className="header__nav-item">
+            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+            <a href="/" onClick={() => Auth.logout()}>
+              Logout
+            </a>
+          </li>
+        </ul>
       );
     } else {
       return (
         <ul className="header__nav-list">
           <li className="header__nav-item">
-            <Link to="/signup">Signup</Link>
+            <Signup />
           </li>
           <li className="header__nav-item">
-            <Link to="/login">Login</Link>
+            <Login />
           </li>
         </ul>
       );

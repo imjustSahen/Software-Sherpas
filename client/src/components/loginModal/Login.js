@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { LOGIN } from "../graphql/mutations";
+import { LOGIN_USER } from "../../utils/mutations";
 
 function LoginModal(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [login, { error }] = useMutation(LOGIN);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
