@@ -16,6 +16,7 @@ const typeDefs = gql`
         artistName: String
         heroImage: String
         secondaryImage: String
+        thumbnailImg: String
         artistDescription: String
         spotifyId: String
         instagramUrl: String
@@ -35,6 +36,7 @@ const typeDefs = gql`
         artistName: String
         heroImage: String
         secondaryImage: String
+        thumbnailImg: String
         artistDescription: String
         spotifyId: String
         instagramUrl: String
@@ -49,7 +51,6 @@ const typeDefs = gql`
         location: String!
         venue: String!
         artists: Array
-        # poster: EventPoster
     }
 
     input EventInput {
@@ -59,13 +60,7 @@ const typeDefs = gql`
         location: String
         venue: String
         artists: Array
-        # poster: EventPoster
     }
-
-    # type EventPoster {
-    #     data: String!
-    #     contentType: String!
-    # }
 
     type Auth {
         token: ID!
@@ -75,6 +70,7 @@ const typeDefs = gql`
     type Query {
         me: User
         users: [User]
+        artists(where: UserInput): [User]
         userbyid(id: ID!): User
         events: [Event]
         eventbyid(id: ID!): Event

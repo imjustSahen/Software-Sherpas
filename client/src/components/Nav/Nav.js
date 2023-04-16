@@ -3,7 +3,7 @@ import "./Nav.css";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav({ Signup, Login }) {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -16,6 +16,17 @@ function Nav() {
             <a href="/" onClick={() => Auth.logout()}>
               Logout
             </a>
+          </li>
+        </ul>
+      );
+    } else {
+      return (
+        <ul className="header__nav-list">
+          <li className="header__nav-item">
+            <Signup />
+          </li>
+          <li className="header__nav-item">
+            <Login />
           </li>
         </ul>
       );

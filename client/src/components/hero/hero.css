@@ -1,6 +1,4 @@
-/* CSS for screens larger than 768px */
 .hero {
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,19 +6,14 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
-
   width: 100%;
-  height: 100vh;
   transition: background-image 1s ease-in-out;
 }
 
 .logo1 {
-  position: absolute;
-  display: block;
-  top: 50px;
-  left: 50px;
-  width: 150px;
-  height: 150px;
+  position: relative;
+  width: 400px;
+  height: 400px;
   z-index: 1;
   cursor: pointer;
 }
@@ -39,68 +32,16 @@
 }
 
 /* Add the animation to the logo */
-.logo1.clicked {
+.clicked {
   animation-name: logo-click-animation;
   animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-
-.login-signup-button {
-  padding: 10px 20px;
-  border: 2px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.login-signup-button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: aliceblue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.743);
-  z-index: 2;
-}
-
-.modal-form {
-  width: 80%;
-  max-width: 600px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* CSS for screens smaller than 768px */
 @media (max-width: 768px) {
-  .landing {
+  .hero {
     height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
-  }
-
-  .logo1 {
-    position: relative;
-    top: auto;
-    left: auto;
-    margin-bottom: 20px;
-  }
-
-  .login-signup-button {
-    font-size: 16px;
-    padding: 8px 16px;
   }
 }
