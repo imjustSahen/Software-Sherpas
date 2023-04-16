@@ -1,13 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { GET_USERS } from "../utils/queries";
+import { GET_ARTISTS } from "../utils/queries";
 
 function Artist() {
-  const { name } = useParams();
-  const { loading, error, data } = useQuery(GET_USERS, {
-    variables: { name },
-  });
+  // const { name } = useParams();
+  const { loading, error, data } = useQuery(GET_ARTISTS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error </p>;
