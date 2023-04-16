@@ -25,6 +25,16 @@ const resolvers = {
                 throw new Error('Could not find Users');
             };
         },
+
+        artists: async (parent, args) => {
+            try {
+                // const { artist } = args.where;
+                return await User.find({artist: true});
+            } catch {
+                throw new Error('Could not find users')
+            }
+        },
+
         userbyid: async (parent, { id }) => {
             try {
                 return await User.findById(id).populate('events');

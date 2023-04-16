@@ -1,20 +1,21 @@
 import React from "react";
-import Artist1 from "../assets/images/TFMarz-2.jpg";
-import Artist2 from "../assets/images/keramel-2.JPEG";
+// import Artist1 from "../assets/images/TFMarz-2.jpg";
+// import Artist2 from "../assets/images/keramel-2.JPEG";
 import CrowdImage from "../assets/logos/CrowdLogo.png";
 import "./home.css";
+// import { Link } from "react-router-dom";
 
 function HomePage() {
-  const artistList = [
-    {
-      name: "TFMarz",
-      imgSrc: Artist1,
-    },
-    {
-      name: "Keramel",
-      imgSrc: Artist2,
-    },
-  ];
+  // const artistList = [
+  //   {
+  //     name: "TFMarz",
+  //     imgSrc: Artist1,
+  //   },
+  //   {
+  //     name: "Keramel",
+  //     imgSrc: Artist2,
+  //   },
+  // ];
 
   return (
     <div>
@@ -46,8 +47,8 @@ function HomePage() {
           <h1 className="featured-artist">Featured Artists</h1>
         </div>
         <div className="images-container">
-          {artistList.map((artist, index) => (
-            <div className="sherpa-image-container" key={index}>
+          {/* {artistList.map((artist, index) => ( */}
+            {/* <div className="sherpa-image-container" key={index}>
               <img
                 src={artist.imgSrc}
                 alt={artist.name}
@@ -56,9 +57,10 @@ function HomePage() {
               <div className="overlay">
                 <div className="overlay-text">{artist.name}</div>
               </div>
-            </div>
-          ))}
+            </div> */}
+          {/* ))} */}
         </div>
+       
       </div>
     </div>
   );
