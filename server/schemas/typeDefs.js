@@ -51,7 +51,6 @@ const typeDefs = gql`
         location: String!
         venue: String!
         artists: Array
-        # poster: EventPoster
     }
 
     input EventInput {
@@ -61,13 +60,7 @@ const typeDefs = gql`
         location: String
         venue: String
         artists: Array
-        # poster: EventPoster
     }
-
-    # type EventPoster {
-    #     data: String!
-    #     contentType: String!
-    # }
 
     type Auth {
         token: ID!

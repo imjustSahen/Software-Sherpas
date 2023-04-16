@@ -4,19 +4,19 @@ const { Schema } = mongoose;
 const eventSchema = new Schema({
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     date: {
         type: Date,
-        required: true,
+        // required: true,
     },
     location: {
         type: String,
-        required: true,
+        // required: true,
     },
     venue: {
         type: String,
-        required: true,
+        // required: true,
     },
     artists: { 
         type: Array,

@@ -49,7 +49,6 @@ const HomePage = () =>  {
           {loading ? (<div>Loading...</div>) :
             <ArtistList 
               artists={artists} 
-              secondaryImage={artists.secondaryImage}
             />
           }
         </div>

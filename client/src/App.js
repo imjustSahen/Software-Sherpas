@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 // import ContactUs from "./pages/ContactUs";
 // import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
-// import Artist from "./pages/Artist";
+import Artist from "./pages/Artist";
 // import Nav from "./components/Nav/Nav";
 // import Footer from "./components/footer/Footer";
 // import Hero from "./components/hero/Hero";
@@ -45,7 +45,7 @@ function App() {
           {/* <Nav /> */}
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/artist/:artistName" element={<Artist />} /> */}
+            <Route path="/artist/:userId" element={<Artist />} />
             {/* <Route path="/aboutus" element={<AboutUs />} /> */}
             {/* <Route path="/contactus" element={<ContactUs />} /> */}
             {/* <Route path="/login" element={<Login />} /> */}

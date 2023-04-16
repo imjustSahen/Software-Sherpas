@@ -72,21 +72,21 @@ export const GET_ARTISTS = gql`
       instagramUrl
       spotifyUrl
       soundcloudUrl
-      events {
-        _id
-        name
-        date
-        location
-        venue
-        artists
-      }}
+      # events {
+      #   _id
+      #   name
+      #   date
+      #   location
+      #   venue
+      #   artists
+      # }
+      }
     }
 `;
 
 export const GET_USER_BY_ID = gql`
 query userById($userbyidId: ID!) {
   userbyid(id: $userbyidId) {
-    user{
     id
     firstName
     lastName
@@ -101,15 +101,14 @@ query userById($userbyidId: ID!) {
     instagramUrl
     spotifyUrl
     soundcloudUrl
-    events {
-      name
-      date
-      location
-      venue
-      artists
-    }
+    # events {
+    #   name
+    #   date
+    #   location
+    #   venue
+    #   artists
+    # }
   }}
-}
 `;
 
 export const GET_EVENTS = gql`
