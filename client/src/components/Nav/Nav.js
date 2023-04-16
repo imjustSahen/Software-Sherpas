@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
@@ -6,6 +6,9 @@ import LoginModal from "../loginModal/Login";
 import SignUpModal from "../signupModal/Signup";
 
 function Nav({ Signup, Login }) {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -14,7 +17,6 @@ function Nav({ Signup, Login }) {
             <Link to="/orderHistory">Order History</Link>
           </li>
           <li className="header__nav-item">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
               Logout
             </a>
@@ -32,9 +34,6 @@ function Nav({ Signup, Login }) {
                 <Link to="/TF-Marz">TF Marz</Link>
               </div>
             </div>
-            {/* <Link to="/login">Login</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link> */}
           </div>
           <ul className="navbar">
             <li className="nav-item">
@@ -43,12 +42,18 @@ function Nav({ Signup, Login }) {
             <li className="nav-item">
               <Link to="/contactUs">Contact</Link>
             </li>
-            {/* <li className="nav-item">
-              <SignUpModal />
-            </li> */}
-            {/* <li className="nav-item">
-              <LoginModal />
-            </li> */}
+            <li className="nav-item">
+              <button onClick={() => setShowSignUpModal(true)}>Sign Up</button>
+              {showSignUpModal && (
+                <SignUpModal onClose={() => setShowSignUpModal(false)} />
+              )}
+            </li>
+            <li className="nav-item">
+              <button onClick={() => setShowLoginModal(true)}>Log In</button>
+              {showLoginModal && (
+                <LoginModal onClose={() => setShowLoginModal(false)} />
+              )}
+            </li>
           </ul>
         </div>
       );
