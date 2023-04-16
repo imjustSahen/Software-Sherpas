@@ -36,9 +36,7 @@ function SignUpModal(props) {
     setIsArtist(event.target.checked);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // form validation
+  const handleSignUp = () => {
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
       alert("Please fill out all fields.");
       return;
@@ -51,7 +49,6 @@ function SignUpModal(props) {
       alert("Password must be at least 6 characters.");
       return;
     }
-    // handle form submission
     addUser({
       variables: {
         firstName,
@@ -70,10 +67,16 @@ function SignUpModal(props) {
         console.log(error);
       });
   };
+
+  const handleClose = () => {
+    props.setShowModal(false);
+  };
+
   return (
     <div>
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+
+      <form>
         <label>
           First Name:
           <input
@@ -120,7 +123,8 @@ function SignUpModal(props) {
           />
         </label>
         <br />
-        <button type="submit" disabled={loading}>
+        <button onClick={handleClose}>Close</button>
+        <button type="button" disabled={loading} onClick={handleSignUp}>
           {loading ? "Submitting..." : "Sign Up"}
         </button>
         {error && <p>Error: {error.message}</p>}
