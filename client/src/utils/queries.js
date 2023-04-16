@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_ME = gql`
 query getMe {
@@ -25,7 +25,6 @@ query getMe {
       artists
     }
   }
-}
 `;
 
 export const GET_USERS = gql`
@@ -82,6 +81,7 @@ export const GET_ARTISTS = gql`
       # }
       }
     }
+  }
 `;
 
 export const GET_USER_BY_ID = gql`
@@ -111,29 +111,16 @@ query userById($userbyidId: ID!) {
   }}
 `;
 
-export const GET_EVENTS = gql`
-query getEvents {
-  events {
-    id
-    name
-    date
-    location
-    venue
-    artists
+export const GET_EVENT_BY_ID = gql`
+  query eventById($eventbyidId: ID!) {
+    eventbyid(id: $eventbyidId) {
+      id
+      name
+      date
+      location
+      venue
+      artists
+    }
   }
-}
 `;
 
-export const GET_EVENT_BY_ID = gql`
-query eventById($eventbyidId: ID!) {
-  eventbyid(id: $eventbyidId) {
-    events{
-    id
-    name
-    date
-    location
-    venue
-    artists
-  }}
-}
-`;
