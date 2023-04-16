@@ -14,10 +14,11 @@ import Artist from "./pages/Artist";
 // import ContactUs from "./pages/ContactUs";
 
 import Nav from "./components/Nav/Nav";
-import Hero from "./components/hero/Hero";
+import Hero from "./components/Hero/Hero";
 // import Footer from "./components/footer/Footer";
 import Login from "./components/loginModal/Login";
 import Signup from "./components/signupModal/Signup";
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -36,7 +37,6 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
 
 function App() {
   return (

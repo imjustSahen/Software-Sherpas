@@ -15,7 +15,6 @@ const HomePage = () =>  {
   const artists = data?.artists || [];
   console.log(artists);
 
-
   return (
     <div>
       <div className="header-image-container">
@@ -46,6 +45,7 @@ const HomePage = () =>  {
           <h1 className="featured-artist">Featured Artists</h1>
         </div>
         <div className="images-container">
+        
           {loading ? (<div>Loading...</div>) :
             <ArtistList 
               artists={artists} 
@@ -55,6 +55,6 @@ const HomePage = () =>  {
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;
