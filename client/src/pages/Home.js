@@ -8,9 +8,8 @@ import Hero from "../components/Hero/Hero";
 import { useQuery } from "@apollo/client";
 import { GET_ARTISTS } from "../utils/queries";
 
-const HomePage = () =>  {
-
-  const {loading, data} = useQuery(GET_ARTISTS);
+const HomePage = () => {
+  const { loading, data } = useQuery(GET_ARTISTS);
   console.log(data);
 
   const artists = data?.artists || [];
@@ -47,12 +46,7 @@ const HomePage = () =>  {
           <h1 className="featured-artist">Featured Artists</h1>
         </div>
         <div className="images-container">
-        
-          {loading ? (<div>Loading...</div>) :
-            <ArtistList 
-              artists={artists} 
-            />
-          }
+          {loading ? <div>Loading...</div> : <ArtistList artists={artists} />}
         </div>
       </div>
     </div>
