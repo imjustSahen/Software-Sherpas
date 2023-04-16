@@ -1,9 +1,9 @@
 import React from "react";
 
-function AboutUs() {
+function About() {
   return (
     <div className="about-section">
-      <h1>About Us</h1>
+      <h1>About</h1>
       <img
         src={'./assets/logos/sherpa-cassette.png'}
         alt="logo pic"
@@ -26,4 +26,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default About;

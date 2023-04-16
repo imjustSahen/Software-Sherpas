@@ -1,20 +1,18 @@
 import React from "react";
-import Artist1 from "../assets/images/TFMarz-2.jpg";
-import Artist2 from "../assets/images/keramel-2.JPEG";
+// import Artist1 from "../assets/images/TFMarz-2.jpg";
+// import Artist2 from "../assets/images/keramel-2.JPEG";
 import CrowdImage from "../assets/logos/CrowdLogo.png";
 import "./home.css";
+import ArtistList from "../components/artistList/artistList";
+import { useQuery } from "@apollo/client";
+import { GET_ARTISTS } from "../utils/queries";
 
-function HomePage() {
-  const artistList = [
-    {
-      name: "TFMarz",
-      imgSrc: Artist1,
-    },
-    {
-      name: "Keramel",
-      imgSrc: Artist2,
-    },
-  ];
+const HomePage = () => {
+  const { loading, data } = useQuery(GET_ARTISTS);
+  console.log(data);
+
+  const artists = data?.artists || [];
+  console.log(artists);
 
   return (
     <div>
@@ -46,22 +44,11 @@ function HomePage() {
           <h1 className="featured-artist">Featured Artists</h1>
         </div>
         <div className="images-container">
-          {artistList.map((artist, index) => (
-            <div className="sherpa-image-container" key={index}>
-              <img
-                src={artist.imgSrc}
-                alt={artist.name}
-                className="sherpa-image"
-              />
-              <div className="overlay">
-                <div className="overlay-text">{artist.name}</div>
-              </div>
-            </div>
-          ))}
+          {loading ? <div>Loading...</div> : <ArtistList artists={artists} />}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;
