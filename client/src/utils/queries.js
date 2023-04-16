@@ -11,6 +11,7 @@ query getMe {
     artistName
     heroImage
     secondaryImage
+    thumbnailImg
     artistDescription
     spotifyId
     instagramUrl
@@ -38,6 +39,7 @@ export const GET_USERS = gql`
     artistName
     heroImage
     secondaryImage
+    thumbnailImg
     artistDescription
     spotifyId
     instagramUrl
@@ -64,6 +66,7 @@ export const GET_ARTISTS = gql`
       artistName
       heroImage
       secondaryImage
+      thumbnailImg
       artistDescription
       spotifyId
       instagramUrl
@@ -92,6 +95,7 @@ query userById($userbyidId: ID!) {
     artistName
     heroImage
     secondaryImage
+    thumbnailImg
     artistDescription
     spotifyId
     instagramUrl

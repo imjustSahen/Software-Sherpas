@@ -16,6 +16,7 @@ const typeDefs = gql`
         artistName: String
         heroImage: String
         secondaryImage: String
+        thumbnailImg: String
         artistDescription: String
         spotifyId: String
         instagramUrl: String
@@ -35,6 +36,7 @@ const typeDefs = gql`
         artistName: String
         heroImage: String
         secondaryImage: String
+        thumbnailImg: String
         artistDescription: String
         spotifyId: String
         instagramUrl: String

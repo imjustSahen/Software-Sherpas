@@ -7,13 +7,14 @@ import ArtistList from "../components/artistList/artistList";
 import { useQuery } from "@apollo/client";
 import { GET_ARTISTS } from "../utils/queries";
 
-function HomePage() {
+const HomePage = () =>  {
 
   const {loading, data} = useQuery(GET_ARTISTS);
   console.log(data);
 
   const artists = data?.artists || [];
   console.log(artists);
+
 
   return (
     <div>
@@ -46,7 +47,10 @@ function HomePage() {
         </div>
         <div className="images-container">
           {loading ? (<div>Loading...</div>) :
-            <ArtistList artists={artists}/>
+            <ArtistList 
+              artists={artists} 
+              secondaryImage={artists.secondaryImage}
+            />
           }
         </div>
       </div>

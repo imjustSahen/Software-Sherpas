@@ -13,6 +13,7 @@ export const LOGIN_USER = gql`
               artistName
               heroImage
               secondaryImage
+              thumbnailImg
               artistDescription
               spotifyId
               instagramUrl
@@ -36,6 +37,7 @@ export const ADD_USER = gql`
         artistName
         heroImage
         secondaryImage
+        thumbnailImg
         artistDescription
         spotifyId
         instagramUrl
