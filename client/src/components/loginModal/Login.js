@@ -15,7 +15,7 @@ function LoginModal(props) {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     try {
       const { data } = await login({ variables: { email, password } });
@@ -26,11 +26,15 @@ function LoginModal(props) {
     }
   };
 
+  const handleClose = () => {
+    props.setShowModal(false);
+  };
+
   return (
     <div>
       <h2>Login</h2>
       {error && <p>Error logging in</p>}
-      <form onSubmit={handleSubmit}>
+      <form>
         <label>
           Email:
           <input type="email" value={email} onChange={handleEmailChange} />
@@ -45,7 +49,10 @@ function LoginModal(props) {
           />
         </label>
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" onClick={handleLogin}>
+          Login
+        </button>
+        <button onClick={handleClose}>Close</button>
       </form>
     </div>
   );
