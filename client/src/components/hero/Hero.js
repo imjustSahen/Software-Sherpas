@@ -36,7 +36,7 @@ function Hero({ handlePageChange }) {
       className="hero"
       style={{ backgroundImage: `url(${currentBackground})` }}
     >
-      <a href="#" onClick={handleLogoClick}>
+      <a href="#home" onClick={handleLogoClick}>
         <img
           src={logo1}
           alt="Logo"

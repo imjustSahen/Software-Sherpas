@@ -29,6 +29,7 @@ export const GET_ME = gql`
 
 export const GET_USERS = gql`
   query getUsers {
+    users {
     id
     firstName
     lastName
@@ -48,6 +49,34 @@ export const GET_USERS = gql`
       location
       venue
       artists
+    }}
+  }
+`;
+
+export const GET_ARTISTS = gql`
+      query artists{
+      artists{
+      _id
+      firstName
+      lastName
+      email
+      artist
+      artistName
+      heroImage
+      secondaryImage
+      artistDescription
+      spotifyId
+      instagramUrl
+      spotifyUrl
+      soundcloudUrl
+      events {
+        _id
+        name
+        date
+        location
+        venue
+        artists
+      }}
     }
   }
 `;
@@ -104,3 +133,4 @@ export const GET_EVENT_BY_ID = gql`
     }
   }
 `;
+

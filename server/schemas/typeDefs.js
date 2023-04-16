@@ -75,6 +75,7 @@ const typeDefs = gql`
     type Query {
         me: User
         users: [User]
+        artists(where: UserInput): [User]
         userbyid(id: ID!): User
         events: [Event]
         eventbyid(id: ID!): Event
