@@ -38,6 +38,9 @@ const userSchema = new Schema({
   secondaryImage: {
     type: String
   },
+  thumbnailImg: {
+    type: String
+  },
   //------------------> 
   artistDescription: {
     type: String,
