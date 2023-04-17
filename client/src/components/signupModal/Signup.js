@@ -1,61 +1,45 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
+import "./signup.css";
 
 function SignUpModal(props) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    artist: false,
+  });
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [isArtist, setIsArtist] = useState(false);
-
   const [addUser, { loading, error }] = useMutation(ADD_USER);
 
-  const handleFirstNameChange = (event) => {
-    setFirstName(event.target.value);
+  const handleInputChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    setUser((prevState) => ({
+      ...prevState,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
-  const handleLastNameChange = (event) => {
-    setLastName(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value);
-  };
-
-  const handleIsArtistChange = (event) => {
-    setIsArtist(event.target.checked);
-  };
-
-  const handleSignUp = () => {
-    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!user.firstName || !user.lastName || !user.email || !user.password) {
       alert("Please fill out all fields.");
       return;
     }
-    if (password !== confirmPassword) {
+    if (user.password !== confirmPassword) {
       alert("Passwords do not match.");
       return;
     }
-    if (password.length < 6) {
+    if (user.password.length < 6) {
       alert("Password must be at least 6 characters.");
       return;
     }
+    console.log("user", user);
     addUser({
       variables: {
-        firstName,
-        lastName,
-        email,
-        password,
-        artist: isArtist,
+        input: user,
       },
     })
       .then((result) => {
@@ -69,95 +53,87 @@ function SignUpModal(props) {
   };
 
   const handleClose = () => {
-    props.setShowModal(false);
+    props.onClose(); // changed from props.setShowModal(false)
   };
 
   return (
     <div className="modal">
-      <div className="modal-form">
-        <h2>Sign Up</h2>
-
-        <form>
-          <label>
-            First Name:
-            <input
-              className="input-field"
-              type="text"
-              value={firstName}
-              onChange={handleFirstNameChange}
-            />
-          </label>
-          <br />
-          <label>
-            Last Name:
-            <input
-              className="input-field"
-              type="text"
-              value={lastName}
-              onChange={handleLastNameChange}
-            />
-          </label>
-          <br />
-          <label>
-            Email:
-            <br />
-            <input
-              className="input-field"
-              type="email"
-              value={email}
-              onChange={handleEmailChange}
-            />
-          </label>
-          <br />
-          <label>
-            Password:
-            <input
-              className="input-field"
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
-          </label>
-          <br />
-          <label>
-            Confirm Password:
-            <input
-              className="input-field"
-              type="password"
-              value={confirmPassword}
-              onChange={handleConfirmPasswordChange}
-            />
-          </label>
-          <br />
-          <label>
-            Are you an Artist:
-            <input
-              className="checkbox-field"
-              type="checkbox"
-              checked={isArtist}
-              onChange={handleIsArtistChange}
-            />
-          </label>
-          <br />
+      <div className="modal-content">
+        <h2>Sign up</h2>
+        {error && <p>Error signing up</p>}
+        <form className="modal-form">
+          <label htmlFor="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            value={user.firstName}
+            onChange={handleInputChange}
+            className="modal-input"
+          />
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value={user.lastName}
+            onChange={handleInputChange}
+            className="modal-input"
+          />
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={user.email}
+            onChange={handleInputChange}
+            className="modal-input"
+          />
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={user.password}
+            onChange={handleInputChange}
+            className="modal-input"
+          />
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="modal-input"
+          />
+          <label htmlFor="artist">Are you an artist?</label>
+          <input
+            type="checkbox"
+            id="artist"
+            name="artist"
+            checked={user.artist}
+            onChange={handleInputChange}
+            className="modal-input"
+          />
           <div className="button-container">
             <div className="button-row">
-              <button className="close-button" onClick={handleClose}>
-                Close
-              </button>
               <button
-                className="submit-button"
-                type="button"
-                disabled={loading}
-                onClick={handleSignUp}
+                type="submit"
+                onClick={handleSubmit}
+                className="modal-button"
               >
-                {loading ? "Submitting..." : "Sign Up"}
+                Sign up
+              </button>
+              <button onClick={handleClose} className="modal-button">
+                Close
               </button>
             </div>
           </div>
-          {error && <p>Error: {error.message}</p>}
         </form>
       </div>
     </div>
   );
 }
+
 export default SignUpModal;
