@@ -5,16 +5,18 @@ import { GET_USER_BY_ID } from "../utils/queries";
 
 const Artist = () => {
 
-  const userbyidId = useParams();
-  console.log(userbyidId)
+  const { userId } = useParams();
+  console.log(userId)
 
   const { loading, error, data } = useQuery(GET_USER_BY_ID, {
     // Pass the `thoughtId` URL parameter into query to retrieve this thought's data
-    variables: { userbyidId },
+    variables: { userId },
   });
 
-  const artist = data?.artist || {};
-  console.log(artist);
+  console.log({data})
+
+  const artist = data?.user || {};
+  // console.log(artist);
 
   if(error){
     return console.log(error)
