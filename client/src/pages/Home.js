@@ -4,7 +4,7 @@ import React from "react";
 // import CrowdImage from "../assets/logos/CrowdLogo.png";
 import "./home.css";
 import ArtistList from "../components/artistList/artistList";
-import Hero from "../components/hero/Hero";
+import Hero from "../components/Hero/Hero";
 import { useQuery } from "@apollo/client";
 import { GET_ARTISTS } from "../utils/queries";
 
