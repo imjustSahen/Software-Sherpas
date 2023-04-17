@@ -9,11 +9,12 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 import Home from "./pages/Home";
-// import AboutUs from "./pages/AboutUs";
+import About from "./pages/About";
 import Artist from "./pages/Artist";
-// import ContactUs from "./pages/ContactUs";
+// import Contact from "./pages/Contact";
 
 import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer";
 // import Hero from "./components/Hero/Hero";
 // import Footer from "./components/footer/Footer";
 import Login from "./components/loginModal/Login";
@@ -48,13 +49,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/artist/:userId" element={<Artist />} />
-            {/* <Route path="/aboutus" element={<AboutUs />} /> */}
-            {/* <Route path="/contactus" element={<ContactUs />} /> */}
-            {/* <Route path="/login" element={<Login />} /> */}
-            {/* <Route path="/signup" element={<Signup />} /> */}
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/contact" element={<Contact />} /> */}
             {/* <Route path="*" element={<NoMatch/>} /> */}
           </Routes>
-          </div>
+          <Footer />
+        </div>
       </Router>
     </ApolloProvider>
   );

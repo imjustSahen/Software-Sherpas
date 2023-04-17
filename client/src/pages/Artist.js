@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_USER_BY_ID } from "../utils/queries";
+import Spotify from "../components/Spotify/Spotify";
 
 import "./keramel.css"
 
@@ -68,9 +69,9 @@ const Artist = () => {
 
       </section>
 
-      <section className="spotify-contact-box">
-        <div className="spotify-ui">
-          Spotify UI
+      <section class="spotify-contact-box">
+        <div class="spotify-ui">
+          <Spotify />
         </div>
       </section>
 

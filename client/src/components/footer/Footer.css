@@ -1,67 +1,24 @@
 /* CSS for screens larger than 768px */
-.footer {
+footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #000000;
   height: 60px;
   padding: 0 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+}
+
+footer h1 {
+  color: whitesmoke;
+  font-size: 22px;
 }
 
 .footer__logo img {
   height: 50px;
-}
-
-.footer__nav {
-  display: flex;
-  align-items: center;
-}
-.footer__nav-list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer__nav-item:not(:last-child) {
-  margin-right: 40px;
-}
-
-.footer__nav-item {
-  margin: 0 10px;
-}
-
-.footer__nav-item a {
-  color: #b37777;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.2s;
-  display: block;
-  padding: 10px 20px;
-}
-
-.footer__nav-item a:hover {
-  color: #f60;
-}
-
-.footer__nav-button {
-  color: #724444;
-  background-color: #000000;
-  border: 2px solid #290a0a;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  margin: 10px;
-}
-
-.footer__nav-button:hover {
-  color: #fff;
-  background-color: #930b0b;
-  border: 2px solid #b37777;
-  transition: all 0.3s;
 }
 
 /* CSS for screens smaller than 768px */
