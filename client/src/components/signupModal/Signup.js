@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../../utils/mutations";
+import { useMutation } from "@apollo/client"; // import the useMutation hook from Apollo Client
+import { ADD_USER } from "../../utils/mutations"; // import the ADD_USER mutation
 import "./signup.css";
 
 function SignUpModal(props) {
+  // Define state variables for user, confirmPassword, and the addUser mutation
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -14,6 +15,7 @@ function SignUpModal(props) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [addUser, { loading, error }] = useMutation(ADD_USER);
 
+  // Define a function to handle input changes and update the user state
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
     setUser((prevState) => ({
@@ -22,38 +24,41 @@ function SignUpModal(props) {
     }));
   };
 
+  // Define a function to handle form submissions
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // prevent the default form submission behavior
     if (!user.firstName || !user.lastName || !user.email || !user.password) {
-      alert("Please fill out all fields.");
+      alert("Please fill out all fields."); // show an alert if required fields are missing
       return;
     }
     if (user.password !== confirmPassword) {
-      alert("Passwords do not match.");
+      alert("Passwords do not match."); // show an alert if passwords do not match
       return;
     }
     if (user.password.length < 6) {
-      alert("Password must be at least 6 characters.");
+      alert("Password must be at least 6 characters."); // show an alert if password is too short
       return;
     }
     console.log("user", user);
+    // Call the addUser mutation with the user state as the input variable
     addUser({
       variables: {
         input: user,
       },
     })
       .then((result) => {
-        // do something with the result if needed
+        // Handle the result if needed
         console.log(result);
       })
       .catch((error) => {
-        // handle error
+        // Handle errors
         console.log(error);
       });
   };
 
+  // Define a function to close the modal
   const handleClose = () => {
-    props.onClose(); // changed from props.setShowModal(false)
+    props.onClose(); // Call the onClose function passed in as a prop
   };
 
   return (

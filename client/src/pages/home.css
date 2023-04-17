@@ -55,15 +55,21 @@ body {
   font-size: 1.5rem;
   margin: 20px auto;
   color: #af4635;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Playfair Display, serif;
+}
+
+.description span {
+  color: #f0c000;
+  font-size: 1.6rem;
 }
 
 .featured-artist-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  max-width: calc(50% - 10px);
 }
 
 .featured-artist {
@@ -73,7 +79,7 @@ body {
 }
 
 .images-container {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -81,10 +87,11 @@ body {
 }
 
 .sherpa-image-container {
-  position: relative; /* Add position relative */
-  width: 40%;
+  position: relative;
+  width: 45%; /* Decrease the width of each image container to allow space for two images to be displayed side by side */
   margin: 0 10px;
   border-radius: 5px;
+  width: calc(50% - 10px);
 }
 
 .sherpa-image-container:hover .overlay {
