@@ -89,6 +89,12 @@ header {
 header a {
   color: var(--light);
 }
+footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+}
+
 
 button {
   font-size: 1rem;

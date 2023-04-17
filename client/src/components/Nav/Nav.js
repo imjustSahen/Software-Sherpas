@@ -50,10 +50,10 @@ function Nav({ Signup, Login }) {
           </div>
           <ul className="navbar">
             <li className="nav-item">
-              <Link to="/aboutUs">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li className="nav-item">
-              <Link to="/contactUs">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
             <li className="nav-item">
               <button onClick={() => setShowSignUpModal(true)}>Sign Up</button>
