@@ -3,11 +3,21 @@ import "./Nav.css";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import LoginModal from "../loginModal/Login";
-import SignUpModal from "../signupModal/Signup";
+// import SignUpModal from "../signupModal/Signup";
+import ArtistNav from "../ArtistNav/ArtistNav";
+
+import { useQuery } from "@apollo/client";
+import { GET_ARTISTS } from "../../utils/queries";
 
 function Nav({ Signup, Login }) {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
+
+  const { loading, data } = useQuery(GET_ARTISTS);
+  console.log(data);
+
+  const artists = data?.artists || [];
+  console.log(artists);
 
   function showNavigation() {
     if (Auth.loggedIn()) {
@@ -30,8 +40,11 @@ function Nav({ Signup, Login }) {
             <div className="dropdown">
               <button className="dropbtn">Artists</button>
               <div className="dropdown-content">
-                <Link to="/Keramel">Keramel</Link>
-                <Link to="/TF-Marz">TF Marz</Link>
+                {loading ? (
+                  <div>Loading...</div>
+                ) : (
+                  <ArtistNav artists={artists} />
+                )}
               </div>
             </div>
           </div>
