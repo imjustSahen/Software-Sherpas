@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
@@ -10,6 +10,9 @@ import { useQuery } from "@apollo/client";
 import { GET_ARTISTS } from "../../utils/queries";
 
 function Nav({ Signup, Login }) {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+
   const { loading, data } = useQuery(GET_ARTISTS);
   console.log(data);
 
@@ -24,7 +27,6 @@ function Nav({ Signup, Login }) {
             <Link to="/orderHistory">Order History</Link>
           </li>
           <li className="header__nav-item">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
               Logout
             </a>
@@ -45,9 +47,6 @@ function Nav({ Signup, Login }) {
                 )}
               </div>
             </div>
-            {/* <Link to="/login">Login</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link> */}
           </div>
           <ul className="navbar">
             <li className="nav-item">
@@ -56,11 +55,17 @@ function Nav({ Signup, Login }) {
             <li className="nav-item">
               <Link to="/contactUs">Contact</Link>
             </li>
-            {/* <li className="nav-item">
-              <SignUpModal />
-            </li> */}
             <li className="nav-item">
-              <LoginModal />
+              <button onClick={() => setShowSignUpModal(true)}>Sign Up</button>
+              {showSignUpModal && (
+                <SignUpModal onClose={() => setShowSignUpModal(false)} />
+              )}
+            </li>
+            <li className="nav-item">
+              <button onClick={() => setShowLoginModal(true)}>Log In</button>
+              {showLoginModal && (
+                <LoginModal onClose={() => setShowLoginModal(false)} />
+              )}
             </li>
           </ul>
         </div>
