@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
+import "./login.css";
 
 function LoginModal(props) {
   const [email, setEmail] = useState("");
@@ -31,29 +32,34 @@ function LoginModal(props) {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <p>Error logging in</p>}
-      <form>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </label>
-        <br />
-        <button type="submit" onClick={handleLogin}>
-          Login
-        </button>
-        <button onClick={handleClose}>Close</button>
-      </form>
+    <div className="modal">
+      <div className="modal-content">
+        <h2>Login</h2>
+        {error && <p>Error logging in</p>}
+        <form>
+          <label>
+            Email:
+            <input type="email" value={email} onChange={handleEmailChange} />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </label>
+          <div className="button-container">
+            <div className="button-row">
+              <button type="submit" onClick={handleLogin}>
+                Login
+              </button>
+              <button onClick={handleClose}>Close</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
