@@ -73,62 +73,90 @@ function SignUpModal(props) {
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
+    <div className="modal">
+      <div className="modal-form">
+        <h2>Sign Up</h2>
 
-      <form>
-        <label>
-          First Name:
-          <input
-            type="text"
-            value={firstName}
-            onChange={handleFirstNameChange}
-          />
-        </label>
-        <br />
-        <label>
-          Last Name:
-          <input type="text" value={lastName} onChange={handleLastNameChange} />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </label>
-        <br />
-        <label>
-          Confirm Password:
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={handleConfirmPasswordChange}
-          />
-        </label>
-        <br />
-        <label>
-          Is Artist:
-          <input
-            type="checkbox"
-            checked={isArtist}
-            onChange={handleIsArtistChange}
-          />
-        </label>
-        <br />
-        <button onClick={handleClose}>Close</button>
-        <button type="button" disabled={loading} onClick={handleSignUp}>
-          {loading ? "Submitting..." : "Sign Up"}
-        </button>
-        {error && <p>Error: {error.message}</p>}
-      </form>
+        <form>
+          <label>
+            First Name:
+            <input
+              className="input-field"
+              type="text"
+              value={firstName}
+              onChange={handleFirstNameChange}
+            />
+          </label>
+          <br />
+          <label>
+            Last Name:
+            <input
+              className="input-field"
+              type="text"
+              value={lastName}
+              onChange={handleLastNameChange}
+            />
+          </label>
+          <br />
+          <label>
+            Email:
+            <br />
+            <input
+              className="input-field"
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              className="input-field"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </label>
+          <br />
+          <label>
+            Confirm Password:
+            <input
+              className="input-field"
+              type="password"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
+            />
+          </label>
+          <br />
+          <label>
+            Are you an Artist:
+            <input
+              className="checkbox-field"
+              type="checkbox"
+              checked={isArtist}
+              onChange={handleIsArtistChange}
+            />
+          </label>
+          <br />
+          <div className="button-container">
+            <div className="button-row">
+              <button className="close-button" onClick={handleClose}>
+                Close
+              </button>
+              <button
+                className="submit-button"
+                type="button"
+                disabled={loading}
+                onClick={handleSignUp}
+              >
+                {loading ? "Submitting..." : "Sign Up"}
+              </button>
+            </div>
+          </div>
+          {error && <p>Error: {error.message}</p>}
+        </form>
+      </div>
     </div>
   );
 }

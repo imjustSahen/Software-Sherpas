@@ -34,12 +34,14 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 400px;
+
+  max-height: 1rem;
 }
 
 .modal form .button-row button {
-  width: 48%;
+  width: 40%;
   padding: 10px;
   font-size: 14px;
   margin-right: 4.5rem;
+  height: 1.5rem;
 }
