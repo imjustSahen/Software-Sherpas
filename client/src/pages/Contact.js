@@ -1,102 +1,83 @@
-import React, { useState } from 'react';
-import { TextField, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from "react";
+import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles((theme) => ({
-  form: {
-    display: 'flex',
-    boxSizing: 'border-box',
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '100%',  
-    border: '10px',
-    padding: '20px 90px 20px 90px',
-    marginTop: '20px 90px 20px 90px',
-    '& > *': {
-      margin: '20px',
-      width: '100%',
-      maxWidth: '600px',
-    },
-  },
-  button: {
-    marginTop: '20px',
-    width: '100%',
-    maxWidth: '250px',
-    backgroundColor: '#8b0000',
-  },
-}));
-
-function ContactForm() {
-  const classes = useStyles();
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleInputChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    });
+const ContactForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = () => {
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 100);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
-  };
+  if (submitted) {
+    return (
+      <>
+        <h2>Thank you!</h2>
+        <div>We'll be in touch soon.</div>
+      </>
+    );
+  }
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
-      <div style={{ textAlign: "center", fontWeight: 'bold' }}>
-        <h1>Contact Us!</h1>
+    <form style={{ backgroundColor: '#1f1f1f', display: 'block', color: '#fff', padding: '1rem', borderRadius: '0.5rem',}} 
+      onSubmit={handleSubmit}
+      method="POST"
+      target="_blank"
+    >
+      <Typography variant="h2" style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginBottom: '16px',
+        fontWeight: 'bold',
+        fontSize: '24px',
+        color: '#ffffff',}}>
+            Contact Us
+        </Typography>
+      <div>
+        <input style={{ 
+          backgroundColor: '#3d3d3d', 
+          color: '#ffff', 
+          border: 'none', 
+          padding: '0.5rem', 
+          borderRadius: '0.25rem', 
+          width: '95%', 
+          marginBottom: '1rem'}} 
+          type="text" placeholder="Your name" name="name" required />
       </div>
-      <TextField
-        label="Name"
-        name="name"
-        value={formData.name}
-        onChange={handleInputChange}
-        variant="outlined"
-        required
-      />
-      <TextField
-        label="Email"
-        name="email"
-        value={formData.email}
-        onChange={handleInputChange}
-        variant="outlined"
-        required
-      />
-      <TextField
-        placeholder="Message"
-        name="message"
-        value={formData.message}
-        onChange={handleInputChange}
-        variant="outlined"
-        required
-      />
-      <Button
-        type="submit"
-        variant="contained"
-        color="primary"
-        size="large"
-        className={classes.button}
-      >
-        Send
-      </Button>
+      <div>
+        <input style={{ 
+          backgroundColor: '#3d3d3d', 
+          color: '#fff', border: 'none', 
+          padding: '0.5rem', 
+          borderRadius: '0.25rem', 
+          width: '95%', 
+          marginBottom: '1rem'}} 
+          type="email" placeholder="Email" name="email" required />
+      </div>
+      <div>
+        <textarea style={{ 
+          backgroundColor: '#3d3d3d', 
+          color: '#fff', 
+          border: 'none', 
+          padding: '0.5rem', 
+          borderRadius: '0.25rem', 
+          width: '95%', 
+          marginBottom: '1rem'}} 
+          placeholder="Your message" name="message" required />
+      </div>
+      <div>
+        <button style={{ 
+          backgroundColor: '#1a1a1a', 
+          color: '#fff', 
+          border: 'none', 
+          padding: '0.5rem', 
+          borderRadius: '0.25rem', 
+          cursor: 'pointer',}} 
+          type="submit">Submit</button>
+      </div>
     </form>
   );
-}
+};
 
 export default ContactForm;

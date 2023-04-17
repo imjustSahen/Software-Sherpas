@@ -1,4 +1,5 @@
 import React from "react";
+import ContactCard from "./components/ContactCard/ContactCard";
 
 function About() {
   return (
@@ -22,6 +23,36 @@ function About() {
         a home for your music, or a fan searching for the next big thing, Sherpa
         Records is here to guide you on your journey.
       </div>
+      <div className="contact-section">
+        <h2>Meet the Team</h2>
+        <div className="contact-cards">
+          <ContactCard
+            name="Sahen Alexander"
+            Github="https://github.com/imjustSahen"
+            email="imjustsahen@gmail.com"
+          />
+          <ContactCard
+            name="Matthew Delgado"
+            Github="https://github.com/DelgaMatt"
+            email="matthewrdelgado@gmail.com"
+          />
+          <ContactCard
+            name="Wyatt Domanski"
+            Github="https://github.com/wyamet"
+            email="Wyattdomanski.md@gmail.com"
+          />
+          <ContactCard
+            name="Sam Jensen"
+            Github="https://github.com/Samualjensen"
+            email="samual.jensen@gmail.com"
+          />
+          <ContactCard
+            name="Julieta Ramirez Solis Nguyen"
+            Github="https://github.com/justjulieta"
+            email="julieta.ramirez27@gmail.com"
+          />
+        </div>
+      </div>      
     </div>
   );
 }
