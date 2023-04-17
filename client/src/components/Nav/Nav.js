@@ -3,7 +3,7 @@ import "./Nav.css";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import LoginModal from "../loginModal/Login";
-// import SignUpModal from "../signupModal/Signup";
+import SignUpModal from "../signupModal/Signup";
 import ArtistNav from "../ArtistNav/ArtistNav";
 
 import { useQuery } from "@apollo/client";
