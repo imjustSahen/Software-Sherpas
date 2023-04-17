@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_USER_BY_ID } from "../utils/queries";
+import Spotify from "../components/Spotify/Spotify";
 
 const Artist = () => {
 
@@ -60,7 +61,7 @@ const Artist = () => {
 
       <section class="spotify-contact-box">
         <div class="spotify-ui">
-          Spotify UI
+          <Spotify />
         </div>
       </section>
 
