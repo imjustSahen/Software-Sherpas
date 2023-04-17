@@ -36,7 +36,7 @@ const resolvers = {
       }
     },
 
-    userbyid: async (parent, { id }) => {
+    user: async (parent, { id }) => {
       try {
         return await User.findById(id).populate("events");
       } catch {

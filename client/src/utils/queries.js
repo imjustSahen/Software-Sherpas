@@ -86,31 +86,24 @@ export const GET_ARTISTS = gql`
 `;
 
 export const GET_USER_BY_ID = gql`
-  query userById($userbyidId: ID!) {
-    userbyid(id: $userbyidId) {
-      id
-      firstName
-      lastName
-      email
-      artist
-      artistName
-      heroImage
-      secondaryImage
-      thumbnailImg
-      artistDescription
-      spotifyId
-      instagramUrl
-      spotifyUrl
-      soundcloudUrl
-      # events {
-      #   name
-      #   date
-      #   location
-      #   venue
-      #   artists
-      # }
-    }
+query user($userId: ID!) {
+  user(id: $userId) {
+    _id
+    firstName
+    lastName
+    email
+    artist
+    artistName
+    heroImage
+    secondaryImage
+    thumbnailImg
+    artistDescription
+    spotifyId
+    instagramUrl
+    spotifyUrl
+    soundcloudUrl
   }
+}
 `;
 
 export const GET_EVENT_BY_ID = gql`
