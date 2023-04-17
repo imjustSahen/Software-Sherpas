@@ -1,0 +1,112 @@
+.artist-body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: "Copperplate", "Papyrus", "fantasy";
+    text-align: center;
+}
+
+.vid-hero video {
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artist-name {
+    font-size: 100px;
+    color: white;
+    padding: 2px;
+    border-bottom: solid;
+    text-shadow: 2px 3px 2px rgb(120, 119, 119);
+    /* color: #70cdda */
+}
+
+.artist-about-box {
+    /* border: solid; */
+    display: flex;
+    flex-flow: row;
+    margin: 50px;
+    box-shadow: 0 0 15px #c729fbc7;
+}
+
+/* .artist-hero-2 {
+    /* width: screen;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+
+.secondary-image {
+    width: 50%;
+    max-width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    /* border: solid 1px white; */
+}
+
+.artist-description {
+    padding: 25px;
+    /* margin: 25px; */
+    width: 50%;
+    max-width: 100%;
+    border: 0px;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 150%;
+}
+
+.artist-booking {
+    /* color: #479da9; */
+    margin: 25px;
+    color: goldenrod;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.artist-socials {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fa {
+    font-size: 3em;
+}
+
+.spotify-contact-box {
+    display: flex;
+    margin: 50px;
+}
+
+@media screen and (min-width:1020px) {
+    .vidHero h1 {
+        font-size: 5rem;
+    }
+    .vidHero h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .vidHero h1 {
+        font-size: 4rem;
+    }
+    .vidHero h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .vidHero h1 {
+        font-size: 3rem;
+    }
+    .vidHero h2 {
+        font-size: 1rem;
+    }
+}
