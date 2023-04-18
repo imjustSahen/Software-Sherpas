@@ -75,7 +75,7 @@ db.once('open', async () => {
         // process ENV for pass? Maybe we can gitignore the seed file?
         password: 'password', 
         artist: true,
-        artistName: "K E R A M E L",
+        artistName: "Keramel",
         heroImage: "Keramel-V.mp4",
         secondaryImage: "keramel-2.jpg",
         thumbnailImg: "keramel-5.jpg",
