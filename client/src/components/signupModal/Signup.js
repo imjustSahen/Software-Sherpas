@@ -15,6 +15,9 @@ function SignUpModal(props) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [addUser, { loading, error }] = useMutation(ADD_USER);
 
+  // Define a state variable to store the login status
+  const [loginStatus, setLoginStatus] = useState(null);
+
   // Define a function to handle input changes and update the user state
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -49,10 +52,15 @@ function SignUpModal(props) {
       .then((result) => {
         // Handle the result if needed
         console.log(result);
+        setLoginStatus("success"); // set the login status to "success"
+        setTimeout(() => {
+          handleClose(); // close the modal after a short delay
+        }, 2000);
       })
       .catch((error) => {
         // Handle errors
         console.log(error);
+        setLoginStatus("error"); // set the login status to "error"
       });
   };
 
@@ -65,7 +73,13 @@ function SignUpModal(props) {
     <div className="modal">
       <div className="modal-content">
         <h2>Sign up</h2>
-        {error && <p>Error signing up</p>}
+        {loginStatus === "error" && <p>Error signing up</p>}
+        {loginStatus === "success" && (
+          <>
+            <div className="overlay"></div>
+            <p className="success-message">Successfully signed up!</p>
+          </>
+        )}
         <form className="modal-form">
           <label htmlFor="firstName">First Name:</label>
           <input
