@@ -74,7 +74,12 @@ function SignUpModal(props) {
       <div className="modal-content">
         <h2>Sign up</h2>
         {loginStatus === "error" && <p>Error signing up</p>}
-        {loginStatus === "success" && <p>Successfully signed up!</p>}
+        {loginStatus === "success" && (
+          <>
+            <div className="overlay"></div>
+            <p className="success-message">Successfully signed up!</p>
+          </>
+        )}
         <form className="modal-form">
           <label htmlFor="firstName">First Name:</label>
           <input
