@@ -58,6 +58,7 @@ const Artist = () => {
 
           <h3 className="artist-booking"><a href="mailto: keramel@gmail.com">Book {artist.artistName}</a></h3>
           <div className="artist-socials">
+            
             <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer"><i
               className="fa fa-instagram fa-lg"></i></a>
             <a href={artist.spotifyUrl} target="_blank" rel="noopener noreferrer"><i
