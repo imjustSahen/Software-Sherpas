@@ -14,7 +14,7 @@ import Artist from "./pages/Artist";
 // import Contact from "./pages/Contact";
 
 import Nav from "./components/Nav/Nav";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/footer/Footer";
 // import Hero from "./components/Hero/Hero";
 // import Footer from "./components/footer/Footer";
 import Login from "./components/loginModal/Login";
