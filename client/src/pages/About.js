@@ -1,5 +1,5 @@
 import React from "react";
-import ContactCard from "./components/ContactCard/ContactCard";
+import ContactCard from "../components/contactcard/ContactCard";
 
 function About() {
   return (
