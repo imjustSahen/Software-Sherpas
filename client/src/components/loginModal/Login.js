@@ -4,27 +4,38 @@ import { LOGIN_USER } from "../../utils/mutations";
 import "./login.css";
 
 function LoginModal(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [login, { error }] = useMutation(LOGIN_USER);
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLogin = async (event) => {
+  // submit form
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState);
     try {
-      const { data } = await login({ variables: { email, password } });
-      localStorage.setItem("token", data.login.token);
-      props.setIsLoggedIn(true);
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
   };
 
   const handleClose = () => {
@@ -36,18 +47,27 @@ function LoginModal(props) {
       <div className="modal-content">
         <h2>Login</h2>
         {error && <p>Error logging in</p>}
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <label>
             Email:
-            <input type="email" value={email} onChange={handleEmailChange} />
+            <input      
+              className="form-input"
+                placeholder="Your email"
+                name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange} />
           </label>
           <br />
           <label>
             Password:
             <input
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
+            className="form-input"
+            placeholder="******"
+            name="password"
+            type="password"
+            value={formState.password}
+            onChange={handleChange}
             />
           </label>
           <div className="button-container">
