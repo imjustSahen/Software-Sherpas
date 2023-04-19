@@ -1,4 +1,4 @@
-# Sherpa Group Records
+# Sherpa Group Records ![img](client/src/assets/logos/sherpa-cassette.png)
 ![License Badge](https://shields.io/badge/license-MIT-green)
 ![License Badge](https://img.shields.io/badge/-React-61DAFB?logo=react&syle=flat&logoColor=white)
 ![License Badge](https://img.shields.io/badge/-GraphQL-E50695?logo=graphql&syle=flat&logoColor=white)
@@ -32,15 +32,13 @@ git clone https://github.com/imjustSahen/Software-Sherpas
 npm i
  ```
 ### Usage
-(Deployed App Placeholder)
+You can view the deployed application [here](https://sherpa-studios.herokuapp.com/).
 
-(Screenshot Placeholder)
+![sherpa-studios herokuapp com_](https://user-images.githubusercontent.com/115049801/233212906-abb1c2ad-5ded-4376-b6ca-2b192aa7d25d.png)
 ### License
 This is app is covered under the [MIT License](https://opensource.org/licenses/MIT)
 
 Copyright (C) Sherpa Records Music Group 2023
-
-![img](client/src/assets/logos/sherpa-cassette.png)
 ### Credits
 - <a href="https://github.com/imjustSahen">Sahen Alexander</a>
 - <a href="https://github.com/DelgaMatt">Matthew Delgado</a>
