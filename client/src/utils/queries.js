@@ -73,14 +73,14 @@ export const GET_ARTISTS = gql`
       instagramUrl
       spotifyUrl
       soundcloudUrl
-      # events {
-      #   _id
-      #   name
-      #   date
-      #   location
-      #   venue
-      #   artists
-      # }
+      events {
+        _id
+        # name
+        # date
+        # location
+        # venue
+        # artists
+      }
     }
   }
 `;

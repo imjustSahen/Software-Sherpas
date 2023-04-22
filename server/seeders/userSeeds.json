@@ -1,0 +1,34 @@
+[
+    {
+        "firstName": "T",
+        "lastName": "F",
+        "email": "tfmarz@gmail.com",
+        "password": "password12345",
+        "artist": true,
+        "artistName": "TF Marz",
+        "heroImage": "TFMarz-V.mp4",
+        "secondaryImage": "TFMarz-2.jpg",
+        "thumbnailImg": "TFMarz-3.jpg",
+        "artistDescription": "TF Marz is a Denver-based musician who produces his own soulful electronic beats. With a unique blend of hip hop, R&B, and feel-good vibes, TF Marz's music is a testament to his versatility and skill as a producer. His beats are simultaneously smooth and hard-hitting, creating a sound that is both uplifting and energizing. With a focus on creating music that makes people feel good, TF Marz's music is perfect for those who want to dance and vibe out to something that has substance. His dedication to his craft and passion for creating memorable music make him an iconic member of this community.",
+        "spotifyId": "5ue8Z5w3uBorBDZtwhsRy2",
+        "instagramUrl": "https://www.instagram.com/tfmarz/",
+        "spotifyUrl": "https://open.spotify.com/artist/5ue8Z5w3uBorBDZtwhsRy2",
+        "soundcloudUrl": "https://soundcloud.com/tfmarz"
+    },
+    {
+        "firstName": "Jared",
+        "lastName": "P",
+        "email": "keramel@gmail.com",
+        "password": "password", 
+        "artist": true,
+        "artistName": "K E R A M E L",
+        "heroImage": "Keramel-V.mp4",
+        "secondaryImage": "keramel-2.jpg",
+        "thumbnailImg": "keramel-5.jpg",
+        "artistDescription": "Keramel is a electronic musician hailing from Los Angeles and currently residing in Portland. Blending genres and creating his own unique sound, Keramel produces mesmerizing electronic beats that are entirely his own. He is a master of genre blending, fusing elements of hip hop, ambient, and experimental music to create a sound that is both captivating and otherworldly. With his enigmatic style and captivating music, Keramel is a rising star in the electronic music scene.",
+        "spotifyId": "1lCQ5s85YXUlfEOfesbcTD",
+        "instagramUrl": "https://www.instagram.com/ker.a.mel/?hl=en",
+        "spotifyUrl": "https://open.spotify.com/artist/1lCQ5s85YXUlfEOfesbcTD",
+        "soundcloudUrl": "https://soundcloud.com/keramelmusic"
+    }
+]

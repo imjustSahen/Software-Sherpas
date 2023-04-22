@@ -46,6 +46,7 @@ const typeDefs = gql`
 
   type Event {
     _id: ID!
+    hostArtist: String
     name: String!
     date: DateTime!
     location: String!
