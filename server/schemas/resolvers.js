@@ -43,9 +43,10 @@ const resolvers = {
         throw new Error("Could not find User matching given id");
       }
     },
-    events: async (parent, args) => {
+    events: async (parent, {creatorId}) => {
       try {
-        return await Event.find({});
+        const params = creatorId ? { creatorId } : {};
+        return await Event.find(params);
       } catch {
         throw new Error("Could not find events");
       }

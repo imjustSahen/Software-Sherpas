@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon",
-    "seed": "node config/seeds.js"
+    "seed": "node seeders/seed.js"
   },
   "keywords": [],
   "author": "",

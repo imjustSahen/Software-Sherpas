@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 import "./login.css";
 
 function LoginModal(props) {
@@ -72,7 +73,7 @@ function LoginModal(props) {
           </label>
           <div className="button-container">
             <div className="button-row">
-              <button type="submit" onClick={handleLogin}>
+              <button type="submit">
                 Login
               </button>
               <button onClick={handleClose}>Close</button>

@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const eventSchema = new Schema({
+    hostArtist: {
+        type: String,
+        required: true,
+    },
     name: {
         type: String,
         // required: true,

@@ -1,0 +1,66 @@
+[
+    {
+        "hostArtist": "Keramel",
+        "name": "Lightning in a Bottle",
+        "date": "May 24, 2023",
+        "location": "Bakersfield, California",
+        "venue": "Buena Vista Lake",
+        "artists": ["Antennae", "Clozee", "Player Dave", "Chase Manhattan", "Rexx Life Raj"]
+    },
+    {   
+        "hostArtist": "TF Marz",
+        "name": "Shambhala",
+        "date": "July 23, 2023",
+        "location": "British Columbia, Canada",
+        "venue": "Salmo River Ranch",
+        "artists": ["Mura Masa", "Hermitude", "Of The Trees", "Mala", "Tor"]
+    },
+    {
+        "hostArtist": "TF Marz",
+        "name": "Sonic Bloom",
+        "date": "June 15, 2023",
+        "location": "Rya, Colorado",
+        "venue": "Humingbird Ranch",
+        "artists": ["Clozee", "Dirtwire", "Inzo", "Notlo", "Maddy O'Neal"]
+    },
+    {
+        "hostArtist": "TF Marz",
+        "name": "Secret Dreams",
+        "date": "August 17, 2023",
+        "location": "Thornville, Ohio",
+        "venue": "Legend Valley",
+        "artists": ["Yheti", "Tipper", "Daily Bread", "Papadosio", "Kursa"]
+    },
+    {
+        "hostArtist": "Keramel",
+        "name": "What The Festival",
+        "date": "July 25, 2023",
+        "location": "Dufur, Oregon",
+        "venue": "Wolf Run Ranch",
+        "artists": ["Stooki Sound", "FKJ", "Electric Mantis", "Sofi Tucker", "Lafa Taylor"]
+    },
+    {
+        "hostArtist": "Keramel",
+        "name": "Actualize Art Festival",
+        "date": "October 13, 2023",
+        "location": "Grass Valley, Oregon",
+        "venue": "On The Ranch",
+        "artists": ["Eastghost", "Sylk", "Pop The Trunk", "Dan Villa", "Blanck"]
+    },
+    {
+        "hostArtist": "Keramel",
+        "name": "The Untz Festival",
+        "date": "May 12, 2023",
+        "location": "Browns Valley, California",
+        "venue": "Sycamore Ranch",
+        "artists": ["Fly", "Blaap", "Hamdi", "Ternion Sound"]
+    },
+    {
+        "hostArtist": "TF Marz",
+        "name": "Lucidity Festival",
+        "date": "April 8, 2024",
+        "location": "Santa Barbara, California",
+        "venue": "Live Oak Campground",
+        "artists": ["Ivy Lab", "Mike Love", "Morillo", "Savej", "Mr. Carmack"]
+    }
+]
