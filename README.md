@@ -21,6 +21,7 @@ We're excited to share our passion for music with you and hope you enjoy using o
 ## Table of Contents:
 * [Installation](#installation)
 * [Usage](#usage)
+* [Resources](#resources)
 * [License](#license)
 * [Credits](#credits)
 * [Questions](#questions)
@@ -35,6 +36,9 @@ npm i
 You can view the deployed application [here](https://sherpa-studios.herokuapp.com/).
 
 ![sherpa-studios herokuapp com_](https://user-images.githubusercontent.com/115049801/233212906-abb1c2ad-5ded-4376-b6ca-2b192aa7d25d.png)
+## Resources
+[Project Figma Board](https://www.figma.com/file/MtWBNvSa3CjXun2KMsDcka/Software-Sherpas?type=whiteboard&node-id=0-1&t=Dt8cvA487lWgNZPn-0)
+
 ### License
 This is app is covered under the [MIT License](https://opensource.org/licenses/MIT)
 
